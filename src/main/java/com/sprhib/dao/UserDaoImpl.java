@@ -53,7 +53,6 @@ public class UserDaoImpl implements UserDao {
 
         Criteria criteria = getCurrentSession().createCriteria(User.class);
         return criteria.list();
-//        return getCurrentSession().createQuery("from users").list();
     }
 
 }
