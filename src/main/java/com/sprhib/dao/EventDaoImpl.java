@@ -19,28 +19,53 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 
 public class EventDaoImpl implements EventDao {
+
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    private Session getCurrentSession(){
+
+        return sessionFactory.getCurrentSession();
+    }
+
+
     @Override
     public void addEvent(Event event) {
-
+        getCurrentSession().save(event);
     }
 
     @Override
     public void updateEvent(Event event) {
+        Event eventToUpdate=getEvent(event.getId());
+        eventToUpdate.setId(event.getId());
+        eventToUpdate.setName(event.getName());
+        eventToUpdate.setDescription(event.getDescription());
+        eventToUpdate.setDate(event.getDate());
+        eventToUpdate.setDay(event.getDay());
+        eventToUpdate.setLatitude(event.getLatitude());
+        eventToUpdate.setLongitude(event.getLongitude());
+        eventToUpdate.setCategory(event.getCategory());
+        eventToUpdate.setFees(event.getFees());
 
+        getCurrentSession().update(eventToUpdate);
     }
 
     @Override
     public Event getEvent(Integer id) {
-        return null;
+        Event event=(Event) getCurrentSession().get(Event.class, id);
+        return event;
     }
 
     @Override
     public void deleteEvent(Integer id) {
-
+        Event event=getEvent(id);
+        if(event!=null)
+            getCurrentSession().delete(event);
     }
 
     @Override
     public List<Event> getEvents() {
-        return null;
+        Criteria criteria = getCurrentSession().createCriteria(Event.class);
+        return criteria.list();
     }
 }
