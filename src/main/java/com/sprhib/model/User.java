@@ -19,12 +19,10 @@ public class User implements Serializable {
     private Integer id;
 
     private String name;
-
     private String email;
-
     private String pw;
-
     private Double phno;
+
 
     public Integer getId() {
         return id;
