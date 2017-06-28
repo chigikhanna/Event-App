@@ -62,39 +62,30 @@ public class Event implements Serializable {
     public Integer getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public String getDescription() {
         return description;
     }
-
     public LocalGregorianCalendar.Date getDate() {
         return date;
     }
-
     public String getDay() {
         return day;
     }
-
     public Time getTime() {
         return time;
     }
-
     public Integer getLatitude() {
         return latitude;
     }
-
     public Integer getLongitude() {
         return longitude;
     }
-
     public String getCategory() {
         return category;
     }
-
     public float getFees() {
         return fees;
     }
