@@ -34,6 +34,8 @@ public class UserDaoImpl implements UserDao {
         userToUpdate.setName(user.getName());
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setPw(user.getPw());
+        userToUpdate.setPhno(user.getPhno());
+        userToUpdate.setAge(user.getAge());
 
         getCurrentSession().update(userToUpdate);
     }
@@ -51,7 +53,6 @@ public class UserDaoImpl implements UserDao {
 
         Criteria criteria = getCurrentSession().createCriteria(User.class);
         return criteria.list();
-//        return getCurrentSession().createQuery("from users").list();
     }
 
 }
