@@ -24,7 +24,6 @@ public class User implements Serializable {
     private float latitude;
     private float longitude;
 
-
     public void setId(Integer id) {
         this.id = id;
     }
