@@ -26,6 +26,8 @@ public class User implements Serializable {
 
     private Double phno;
 
+    private String address;
+
     public Integer getId() {
         return id;
     }
@@ -64,5 +66,13 @@ public class User implements Serializable {
 
     public void setPhno(Double phno) {
         this.phno = phno;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
