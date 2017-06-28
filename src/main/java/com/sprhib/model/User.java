@@ -24,15 +24,7 @@ public class User implements Serializable {
     private String pw;
     private Double phno;
 
-<<<<<<< HEAD
 //    private Integer age;
-=======
-<<<<<<< HEAD
-=======
-    private Integer age;
->>>>>>> ecffd79b187b8667b4342378b3b09818bdbd7e50
-
->>>>>>> origin/master
     public void setId(Integer id) {
         this.id = id;
     }
