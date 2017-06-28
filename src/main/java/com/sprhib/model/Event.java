@@ -22,8 +22,8 @@ public class Event implements Serializable {
     private LocalGregorianCalendar.Date date;
     private String day;
     private Time time;
-    private Integer latitude;
-    private Integer longitude;
+    private float latitude;
+    private float longitude;
     private String category;
     private float fees;
 
@@ -77,10 +77,10 @@ public class Event implements Serializable {
     public Time getTime() {
         return time;
     }
-    public Integer getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
-    public Integer getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
     public String getCategory() {
