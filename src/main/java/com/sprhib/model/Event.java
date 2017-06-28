@@ -24,34 +24,34 @@ public class Event implements Serializable {
     private String category;
     private float fees;
 
-    public void setId(){
+    public void setId(Integer id){
         this.id=id;
     }
-    public void setName(){
+    public void setName(String name){
         this.name=name;
     }
-    public void setDescription(){
+    public void setDescription(String description){
         this.description=description;
     }
-    public void setDate(){
+    public void setDate(Date date){
         this.date=date;
     }
-    public void setDay(){
+    public void setDay(String day){
         this.day=day;
     }
-    public void setTime(){
+    public void setTime(Time time){
         this.time=time;
     }
-    public void setLatitude(){
+    public void setLatitude(float latitude){
         this.latitude=latitude;
     }
-    public void setLongitude(){
+    public void setLongitude(float longitude){
         this.longitude=longitude;
     }
-    public void setCategory(){
+    public void setCategory(String category){
         this.category=category;
     }
-    public void setFees(){
+    public void setFees(float fees){
         this.fees=fees;
     }
 
