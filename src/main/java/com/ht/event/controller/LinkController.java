@@ -1,4 +1,4 @@
-package com.sprhib.controller;
+package com.ht.event.controller;
 
 
 import org.springframework.stereotype.Controller;

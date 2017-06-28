@@ -1,7 +1,7 @@
-package com.sprhib.service;
+package com.ht.event.service;
 
-import com.sprhib.model.User;
-import com.sprhib.dao.UserDao;
+import com.ht.event.model.User;
+import com.ht.event.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;

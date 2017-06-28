@@ -1,4 +1,6 @@
-package com.sprhib.model;
+package com.ht.event.model;
+
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
@@ -21,8 +23,8 @@ public class User implements Serializable {
     private String email;
     private String pw;
     private Double phno;
-    private Integer age;
 
+//    private Integer age;
     public void setId(Integer id) {
         this.id = id;
     }
@@ -38,9 +40,9 @@ public class User implements Serializable {
     public void setPhno(Double phno) {
         this.phno = phno;
     }
-    public void setAge(Integer age) {
-       this.age = age;
-    }
+//    public void setAge(Integer age) {
+//        this.age = age;
+//    }
 
     public Integer getId() {
         return id;
@@ -57,7 +59,7 @@ public class User implements Serializable {
     public Double getPhno() {
         return phno;
     }
-    public Integer getAge() {
-        return age;
-    }
+//    public Integer getAge() {
+//        return age;
+//    }
 }

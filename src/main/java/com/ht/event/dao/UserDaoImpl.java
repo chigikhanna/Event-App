@@ -1,15 +1,15 @@
-package com.sprhib.dao;
+package com.ht.event.dao;
 
 
 import java.util.List;
 
+import com.ht.event.model.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sprhib.model.User;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
@@ -34,8 +34,6 @@ public class UserDaoImpl implements UserDao {
         userToUpdate.setName(user.getName());
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setPw(user.getPw());
-        userToUpdate.setPhno(user.getPhno());
-        userToUpdate.setAge(user.getAge());
 
         getCurrentSession().update(userToUpdate);
     }
@@ -53,6 +51,7 @@ public class UserDaoImpl implements UserDao {
 
         Criteria criteria = getCurrentSession().createCriteria(User.class);
         return criteria.list();
+//        return getCurrentSession().createQuery("from users").list();
     }
 
 }

@@ -1,4 +1,4 @@
-package com.sprhib.dao;
+package com.ht.event.dao;
 
 /**
  * Created by tanvigupta on 28/06/17.
@@ -12,7 +12,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sprhib.model.Event;
+import com.ht.event.model.Event;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
@@ -42,7 +42,6 @@ public class EventDaoImpl implements EventDao {
         eventToUpdate.setDescription(event.getDescription());
         eventToUpdate.setDate(event.getDate());
         eventToUpdate.setDay(event.getDay());
-        eventToUpdate.setTime(event.getTime());
         eventToUpdate.setLatitude(event.getLatitude());
         eventToUpdate.setLongitude(event.getLongitude());
         eventToUpdate.setCategory(event.getCategory());

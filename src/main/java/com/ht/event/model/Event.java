@@ -1,4 +1,4 @@
-package com.sprhib.model;
+package com.ht.event.model;
 
 import java.util.Date;
 

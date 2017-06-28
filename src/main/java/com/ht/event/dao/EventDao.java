@@ -1,8 +1,8 @@
-package com.sprhib.dao;
+package com.ht.event.dao;
 
 
 import java.util.List;
-import com.sprhib.model.Event;
+import com.ht.event.model.Event;
 /**
  * Created by tanvigupta on 28/06/17.
  */

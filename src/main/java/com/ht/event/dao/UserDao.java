@@ -1,7 +1,8 @@
-package com.sprhib.dao;
+package com.ht.event.dao;
 
 import java.util.List;
-import com.sprhib.model.User;
+
+import com.ht.event.model.User;
 
 public interface UserDao {
     public void addUser(User user);
