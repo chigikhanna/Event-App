@@ -52,16 +52,20 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public Event getEvent(Integer id) {
-        return null;
+        Event event=(Event) getCurrentSession().get(Event.class, id);
+        return event;
     }
 
     @Override
     public void deleteEvent(Integer id) {
-
+        Event event=getEvent(id);
+        if(event!=null)
+            getCurrentSession().delete(event);
     }
 
     @Override
     public List<Event> getEvents() {
-        return null;
+        Criteria criteria = getCurrentSession().createCriteria(Event.class);
+        return criteria.list();
     }
 }
