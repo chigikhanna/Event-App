@@ -1,10 +1,12 @@
 package com.sprhib.model;
 
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
 import java.lang.Double;
 
@@ -14,16 +16,19 @@ import java.lang.Double;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String name;
     private String email;
     private String pw;
     private Double phno;
-    private float latitude;
-    private float longitude;
 
+<<<<<<< HEAD
+=======
+    private Integer age;
+
+>>>>>>> origin/master
     public void setId(Integer id) {
         this.id = id;
     }
@@ -38,12 +43,6 @@ public class User implements Serializable {
     }
     public void setPhno(Double phno) {
         this.phno = phno;
-    }
-    public void setLatitude(float latitude) {
-        this.latitude = latitude;
-    }
-    public void setLongitude() {
-       this.longitude=longitude;
     }
 
     public Integer getId() {
@@ -61,10 +60,10 @@ public class User implements Serializable {
     public Double getPhno() {
         return phno;
     }
-    public float getLatitude(){return latitude;}
-    public float getLongitude(){
-        return longitude;
+    public Integer getAdd() {
+        return age;
     }
-
-
+    public void setAdd(Integer age) {
+        this.age = age;
+    }
 }
