@@ -2,10 +2,7 @@ package com.sprhib.model;
 
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.lang.Double;
 
@@ -15,7 +12,7 @@ import java.lang.Double;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String name;
@@ -25,6 +22,8 @@ public class User implements Serializable {
     private String pw;
 
     private Double phno;
+
+    private Integer age;
 
     public Integer getId() {
         return id;
@@ -64,5 +63,13 @@ public class User implements Serializable {
 
     public void setPhno(Double phno) {
         this.phno = phno;
+    }
+
+    public Integer getAdd() {
+        return age;
+    }
+
+    public void setAdd(Integer age) {
+        this.age = age;
     }
 }
