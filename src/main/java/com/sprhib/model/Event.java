@@ -1,6 +1,6 @@
 package com.sprhib.model;
 
-import sun.util.calendar.LocalGregorianCalendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +19,7 @@ public class Event implements Serializable {
 
     private String name;
     private String description;
-    private LocalGregorianCalendar.Date date;
+    private Date date;
     private String day;
     private Time time;
     private float latitude;
@@ -68,7 +68,7 @@ public class Event implements Serializable {
     public String getDescription() {
         return description;
     }
-    public LocalGregorianCalendar.Date getDate() {
+    public Date getDate() {
         return date;
     }
     public String getDay() {
