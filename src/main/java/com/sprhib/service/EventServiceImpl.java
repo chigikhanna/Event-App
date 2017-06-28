@@ -39,6 +39,7 @@ public class EventServiceImpl implements EventService{
     }
 
     @Override
+    @Transactional
     public List<Event> getEvents() {
         return eventDao.getEvents();
     }
