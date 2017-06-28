@@ -1,9 +1,5 @@
 package com.sprhib.controller;
 
-/**
- * Created by tanvigupta on 23/06/17.
- */
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
