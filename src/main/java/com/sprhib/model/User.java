@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.lang.Double;
 
 @Entity
 @Table(name = "users")
@@ -22,6 +23,8 @@ public class User implements Serializable {
     private String email;
 
     private String pw;
+
+    private Double phno;
 
     public Integer getId() {
         return id;
@@ -53,5 +56,13 @@ public class User implements Serializable {
 
     public void setPw(String pw) {
         this.pw = pw;
+    }
+
+    public Double getPhno() {
+        return phno;
+    }
+
+    public void setPhno(Double phno) {
+        this.phno = phno;
     }
 }
