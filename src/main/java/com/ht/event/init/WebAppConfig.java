@@ -1,4 +1,4 @@
-package com.sprhib.init;
+package com.ht.event.init;
 
 import java.util.Properties;
 
