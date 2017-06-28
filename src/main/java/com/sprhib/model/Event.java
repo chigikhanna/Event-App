@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
-@Table(name = "users")
+@Table(name = "event")
 
 public class Event implements Serializable {
     @Id
