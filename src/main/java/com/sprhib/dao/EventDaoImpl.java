@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class EventDaoImpl implements EventDao {
     @Override
     public void addEvent(Event event) {
-        
+
     }
 
     @Override
