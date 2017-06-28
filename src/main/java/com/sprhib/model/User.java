@@ -1,8 +1,5 @@
 package com.sprhib.model;
 
-/**
- * Created by tanvigupta on 23/06/17.
- */
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 import javax.persistence.Entity;

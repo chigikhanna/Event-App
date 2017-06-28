@@ -1,8 +1,5 @@
 package com.sprhib.dao;
 
-/**
- * Created by tanvigupta on 23/06/17.
- */
 
 import java.util.List;
 

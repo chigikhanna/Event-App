@@ -1,8 +1,5 @@
 package com.sprhib.controller;
 
-/**
- * Created by tanvigupta on 23/06/17.
- */
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

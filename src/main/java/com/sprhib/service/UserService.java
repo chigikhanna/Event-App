@@ -1,8 +1,5 @@
 package com.sprhib.service;
 
-/**
- * Created by tanvigupta on 23/06/17.
- */
 import java.util.List;
 import com.sprhib.model.User;
 

@@ -1,8 +1,5 @@
 package com.sprhib.init;
 
-/**
- * Created by tanvigupta on 23/06/17.
- */
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
