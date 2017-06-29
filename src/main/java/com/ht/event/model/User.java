@@ -25,6 +25,10 @@ public class User implements Serializable {
     private Double phno;
     private Integer age;
 
+<<<<<<< HEAD
+=======
+   private Integer age;
+>>>>>>> origin/master
     public void setId(Integer id) {
         this.id = id;
     }
@@ -40,7 +44,11 @@ public class User implements Serializable {
     public void setPhno(Double phno) {
         this.phno = phno;
     }
+<<<<<<< HEAD
    public void setAge(Integer age) {
+=======
+    public void setAge(Integer age) {
+>>>>>>> origin/master
         this.age = age;
     }
 
@@ -61,5 +69,9 @@ public class User implements Serializable {
     }
     public Integer getAge() {
         return age;
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> origin/master
 }
