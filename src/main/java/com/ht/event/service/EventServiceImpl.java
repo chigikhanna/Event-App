@@ -43,6 +43,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public void deleteEvent(Integer id) {
+
         eventDao.deleteEvent(id);
     }
 

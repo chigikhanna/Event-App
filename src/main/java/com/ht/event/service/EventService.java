@@ -1,7 +1,6 @@
 package com.ht.event.service;
 
 import java.util.List;
-
 import com.ht.event.model.Event;
 
 public interface EventService {
