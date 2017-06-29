@@ -21,7 +21,7 @@ public class User implements Serializable {
     private String name;
     private String email;
     private String pw;
-    private Double phno;
+    private Double phone;
     private Integer age;
 
 
@@ -37,8 +37,8 @@ public class User implements Serializable {
     public void setPw(String pw) {
         this.pw = pw;
     }
-    public void setPhno(Double phno) {
-        this.phno = phno;
+    public void setPhone(Double phone) {
+        this.phone = phone;
     }
 
     public void setAge(Integer age) {
@@ -58,8 +58,8 @@ public class User implements Serializable {
     public String getPw() {
         return pw;
     }
-    public Double getPhno() {
-        return phno;
+    public Double getPhone() {
+        return phone;
     }
     public Integer getAge() {
         return age;
