@@ -3,7 +3,10 @@ package com.ht.event.controller;
 import java.util.List;
 
 import com.ht.event.model.Event;
+<<<<<<< HEAD
+=======
 import com.ht.event.model.User;
+>>>>>>> origin/master
 import com.ht.event.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
