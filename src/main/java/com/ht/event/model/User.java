@@ -1,6 +1,9 @@
 package com.ht.event.model;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,8 +26,12 @@ public class User implements Serializable {
     private String pw;
     private Double phone;
     private Integer age;
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> origin/master
     public void setId(Integer id) {
         this.id = id;
     }
@@ -40,9 +47,13 @@ public class User implements Serializable {
     public void setPhone(Double phone) {
         this.phone = phone;
     }
+<<<<<<< HEAD
 
     public void setAge(Integer age) {
 
+=======
+    public void setAge(Integer age) {
+>>>>>>> origin/master
         this.age = age;
     }
 
@@ -63,8 +74,12 @@ public class User implements Serializable {
     }
     public Integer getAge() {
         return age;
+<<<<<<< HEAD
 
     }
 
+=======
+    }
+>>>>>>> origin/master
 }
 
