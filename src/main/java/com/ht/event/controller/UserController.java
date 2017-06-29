@@ -39,13 +39,13 @@ public class UserController {
         return modelAndView;
     }
     @RequestMapping(value = "/list")
-    public ModelAndView listOfUsers(){
+    public List<User> listOfUsers(){
         ModelAndView modelAndView=new ModelAndView("listuser");
 
         List<User> users=userService.getUsers();
-        modelAndView.addObject("users",users);
-
-        return modelAndView;
+        return users;
+//        modelAndView.addObject("users",users);
+//        return modelAndView;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
