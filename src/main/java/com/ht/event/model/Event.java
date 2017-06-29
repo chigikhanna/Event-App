@@ -19,10 +19,12 @@ public class Event implements Serializable {
     private Date date;
     private String day;
     private Time time;
-    private float latitude;
-    private float longitude;
-    private String category;
+    private float latitude;   //google api geo location
+    private float longitude;  //google api geo location
+    private String category;    // many to many
     private float fees;
+    //image url
+    //jsp for thiks -->>>
 
     public void setId(Integer id){
         this.id=id;

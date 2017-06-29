@@ -2,13 +2,12 @@ package com.ht.event.controller;
 
 import java.util.List;
 
+import com.google.gson.Gson;
 import com.ht.event.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ht.event.service.UserService;
@@ -37,14 +36,16 @@ public class UserController {
 
         return modelAndView;
     }
-    @RequestMapping(value = "/list")
-    public ModelAndView listOfUsers(){
+    @RequestMapping(value = "/list", produces= MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody String listOfUsers(){
         ModelAndView modelAndView=new ModelAndView("listuser");
 
         List<User> users=userService.getUsers();
-        modelAndView.addObject("users",users);
+        String json = new Gson().toJson(users);
 
-        return modelAndView;
+        return json;
+//        modelAndView.addObject("users",users);
+//        return modelAndView;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
