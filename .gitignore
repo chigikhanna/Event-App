@@ -1,5 +1,7 @@
 ### Maven template
 target/
+target/classes/application.properties
+target/eventapp/WEB-INF/classes/application.properties
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
