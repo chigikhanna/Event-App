@@ -1,7 +1,5 @@
 package com.ht.event.model;
 
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,8 +21,8 @@ public class User implements Serializable {
     private String email;
     private String pw;
     private Double phno;
-
     private Integer age;
+    
     public void setId(Integer id) {
         this.id = id;
     }
