@@ -5,7 +5,9 @@ package com.ht.event.controller;
  */
 
 import com.google.gson.Gson;
+import com.ht.event.model.Category;
 import com.ht.event.model.User;
+import com.ht.event.service.CategoryService;
 import com.ht.event.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,25 +22,24 @@ import com.ht.event.service.UserService;
 public class CategoryController {
 
     @Autowired
-    private UserService userService;
+    private CategoryService categoryService;
 
     @RequestMapping(value = "/add", method= RequestMethod.GET)
-    public ModelAndView addUserPage() {
-        ModelAndView modelAndView = new ModelAndView("adduser");
-        modelAndView.addObject("user",new User());
-
+    public ModelAndView addCategoryPage() {
+        ModelAndView modelAndView = new ModelAndView("addcategory");
+        modelAndView.addObject("category",new Category());
         return modelAndView;
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public String addingUser(@ModelAttribute User user){
+    public String addingCategory(@ModelAttribute Category category){
 
         ModelAndView modelAndView=new ModelAndView("home");
-        userService.addUser(user);
+        categoryService.addCategory(category);
 
         String message="You have successfully signed up.";
         modelAndView.addObject("message",message);
-        String json = new Gson().toJson(user);
+        String json = new Gson().toJson(category);
         return json;
         //        return modelAndView;
     }
@@ -46,7 +47,7 @@ public class CategoryController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteUser(@PathVariable String id){
         ModelAndView modelAndView=new ModelAndView("home");
-        userService.deleteUser(Integer.parseInt(id));
+        categoryService.deleteCategory(Integer.parseInt(id));
         String message="Successfully deleted.";
         modelAndView.addObject("message",message);
         return modelAndView;
