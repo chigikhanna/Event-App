@@ -13,7 +13,6 @@ public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
     private String description;
     private Date date;
@@ -21,7 +20,7 @@ public class Event implements Serializable {
     private Time time;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
-    private String category;    // many to many
+    private String category;  //many to many
     private float fees;
     //image url
     //jsp for this -->>>
