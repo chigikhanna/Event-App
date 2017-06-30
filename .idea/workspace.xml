@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="169a93fc-b8f6-4dd9-96fa-28114c93de39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/eventapp_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/eventapp_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventapp.iml" afterPath="$PROJECT_DIR$/eventapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1031,7 +1028,7 @@
       <workItem from="1498720346890" duration="3035000" />
       <workItem from="1498727815862" duration="156000" />
       <workItem from="1498727978617" duration="2423000" />
-      <workItem from="1498800919432" duration="2509000" />
+      <workItem from="1498800919432" duration="2518000" />
     </task>
     <task id="LOCAL-00001" summary="GeoLocation API">
       <created>1498805141452</created>
@@ -1040,11 +1037,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498805141452</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GeoLocation API">
+      <created>1498805195500</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1498805195500</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17269000" />
+    <option name="totallyTimeSpent" value="17278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="850" height="810" extended-state="0" />
