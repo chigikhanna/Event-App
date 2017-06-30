@@ -40,7 +40,6 @@ public class GeoLoc {
     public String getLatitude() {
         return latitude;
     }
-
     public String getLongitude() {
         return longitude;
     }

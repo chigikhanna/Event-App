@@ -29,8 +29,7 @@ public class GeoLocController {
     )
             throws Exception {
 
-        GeoIPLocationService <String, GeoLoc> locationService
-                = new GeoLocService();
+        GeoIPLocationService <String, GeoLoc> locationService = new GeoLocService();
         return locationService.getLocation(ipAddress);
     }
 }
