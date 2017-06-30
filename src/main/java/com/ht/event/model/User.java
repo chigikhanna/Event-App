@@ -46,23 +46,18 @@ public class User implements Serializable {
     public Integer getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getPw() {
         return pw;
     }
-
     public Double getPhone() {
         return phone;
     }
-
     public Integer getAge() {
         return age;
 
