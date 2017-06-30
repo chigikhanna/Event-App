@@ -24,7 +24,7 @@ public class Event implements Serializable {
     private String category;    // many to many
     private float fees;
     //image url
-    //jsp for thiks -->>>
+    //jsp for this -->>>
 
     public void setId(Integer id){
         this.id=id;
