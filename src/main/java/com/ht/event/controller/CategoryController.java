@@ -6,17 +6,12 @@ package com.ht.event.controller;
 
 import com.google.gson.Gson;
 import com.ht.event.model.Category;
-import com.ht.event.model.User;
 import com.ht.event.service.CategoryService;
-import com.ht.event.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-import com.ht.event.service.UserService;
 @Controller
 @RequestMapping(value="/category")
 public class CategoryController {
