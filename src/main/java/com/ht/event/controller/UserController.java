@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ht.event.service.UserService;
-//klk
 @Controller
 @RequestMapping(value="/user")
 public class UserController {
