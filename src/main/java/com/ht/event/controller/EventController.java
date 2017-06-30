@@ -2,6 +2,7 @@ package com.ht.event.controller;
 
 import java.util.List;
 
+import com.google.gson.Gson;
 import com.ht.event.model.Event;
 
 import com.ht.event.service.EventService;
@@ -28,7 +29,7 @@ public class EventController {
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public ModelAndView addingEvent(@ModelAttribute Event event){
+    public String addingEvent(@ModelAttribute Event event){
 
         ModelAndView modelAndView=new ModelAndView("home");
         eventService.addEvent(event);
@@ -36,16 +37,18 @@ public class EventController {
         String message="Event added.";
         modelAndView.addObject("message",message);
 
-        return modelAndView;
+        String json = new Gson().toJson(modelAndView);
+        return json;
     }
     @RequestMapping(value = "/list")
-    public ModelAndView listOfEvent(){
+    public String listOfEvent(){
         ModelAndView modelAndView=new ModelAndView("listevent");
 
         List<Event> events=eventService.getEvents();
-        modelAndView.addObject("event",events);
 
-        return modelAndView;
+        String json = new Gson().toJson(events);
+
+        return json;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)

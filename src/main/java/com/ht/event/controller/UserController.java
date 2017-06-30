@@ -22,19 +22,21 @@ public class UserController {
     public ModelAndView addUserPage() {
         ModelAndView modelAndView = new ModelAndView("adduser");
         modelAndView.addObject("user",new User());
+
         return modelAndView;
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public ModelAndView addingUser(@ModelAttribute User user){
+    public String addingUser(@ModelAttribute User user){
 
         ModelAndView modelAndView=new ModelAndView("home");
         userService.addUser(user);
 
         String message="You have successfully signed up.";
         modelAndView.addObject("message",message);
-
-        return modelAndView;
+        String json = new Gson().toJson(user);
+        return json;
+        //        return modelAndView;
     }
     @RequestMapping(value = "/list", produces= MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody String listOfUsers(){
@@ -44,8 +46,6 @@ public class UserController {
         String json = new Gson().toJson(users);
 
         return json;
-//        modelAndView.addObject("users",users);
-//        return modelAndView;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
