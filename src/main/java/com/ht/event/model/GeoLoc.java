@@ -16,15 +16,6 @@ public class GeoLoc {
         this.longitude = longitude;
 
     }
-
-    public GeoLoc(String ip, String cityName, String latitude, String longitude) {
-        this.ipAddress = ip;
-        this.city = cityName;
-        this.latitude = latitude;
-        this.longitude = longitude;
-
-    }
-
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
