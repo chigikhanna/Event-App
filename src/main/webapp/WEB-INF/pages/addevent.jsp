@@ -9,23 +9,23 @@
     <table>
         <tbody>
         <tr>
-            <td>Event Name:</td>
+            <td>Event Name</td>
             <td><form:input path="name"/></td>
         </tr>
         <tr>
-            <td>Day:</td>
+            <td>Day</td>
             <td><form:input type="text" path="day"/></td>
         </tr>
         <tr>
-            <td>Date:</td>
+            <td>Date</td>
             <td><form:input type="date" path="date"/></td>
         </tr>
         <tr>
-            <td>Time:</td>
+            <td>Time</td>
             <td><form:input type="time" path="time"/></td>
         </tr>
         <tr>
-            <td>Location:</td>
+            <td>Location</td>
             <td><form:input type="" path=""/></td>
         </tr>
         <tr>
@@ -33,15 +33,28 @@
             <td><form:input type="" path="category"/></td>
         </tr>
         <tr>
-            <td>Description:</td>
+            <td>Description</td>
             <td><form:input type="text" path="description"/></td>
         </tr>
         <tr>
-            <td>Registration Fee:</td>
-            <td><form:input type="" path="fees"/></td>
+            <td>Registration Fee</td>
+            <td><form:input type="text" path="fees"/></td>
         </tr>
         <tr>
-            <td><input type="submit" value="Sign up"></td>
+            <td>Upload Image</td>
+            <td>Select file to uplaod:</td>
+            <td>
+                <form action="upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" />
+                    <input type="submit" value="upload" />
+                </form>
+            </td>
+            <div id="result">
+                <h3>${requestScope["message"]}</h3>
+            </div>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
             <td></td>
         </tr>
         </tbody>
