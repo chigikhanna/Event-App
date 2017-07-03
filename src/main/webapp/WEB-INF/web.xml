@@ -29,8 +29,8 @@
     <!--<display-name>Spring MVC Sign Up</display-name>-->
     <!--<listener>-->
         <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-    <!--</listener>-->
-    <!--<servlet>-->
+    <!--</listener>>
+    <!-<servlet>-->
         <!--<servlet-name>dispatcher</servlet-name>-->
         <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
         <!--<load-on-startup>1</load-on-startup>-->
