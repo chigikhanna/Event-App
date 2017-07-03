@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by chigi on 30-Jun-17.
+ * Created by tanvigupta on 30-Jun-17.
  */
 @Repository
 public class CategoryDaoImpl implements CategoryDao {
