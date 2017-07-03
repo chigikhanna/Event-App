@@ -1,13 +1,12 @@
 package com.ht.event.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
+import com.sun.istack.internal.NotNull;
+
+import java.util.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
-import java.util.Set;
 
 @Entity
 @Table(name = "event")
@@ -15,7 +14,9 @@ import java.util.Set;
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "event_id")
     private Integer id;
+
     private String name;
     private String description;
     private Date date;
@@ -24,7 +25,12 @@ public class Event implements Serializable {
     private Time time;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
-//    private Set category;  //many to many
+
+    @NotNull
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
+    private Set<Category> category;  //many to many
+
     private float fees;
     //image url
 
@@ -56,9 +62,9 @@ public class Event implements Serializable {
     public void setLongitude(float longitude){
         this.longitude=longitude;
     }
-//    public void setCategory(Set category){
-//        this.category=category;
-//    }
+    public void setCategory(Set<Category> category){
+        this.category=category;
+    }
     public void setFees(float fees){
         this.fees=fees;
     }
@@ -93,9 +99,9 @@ public class Event implements Serializable {
     public float getLongitude() {
         return longitude;
     }
-//    public Set getCategory() {
-//        return category;
-//    }
+    public Set<Category> getCategory() {
+        return category;
+    }
     public float getFees() {
         return fees;
     }
