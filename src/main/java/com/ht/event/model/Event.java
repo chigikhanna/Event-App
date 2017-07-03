@@ -19,6 +19,7 @@ public class Event implements Serializable {
     private String description;
     private Date date;
     private String day;
+    private String duration;
     private Time time;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
@@ -41,6 +42,9 @@ public class Event implements Serializable {
     }
     public void setDay(String day){
         this.day=day;
+    }
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
     public void setTime(Time time){
         this.time=time;
@@ -73,6 +77,9 @@ public class Event implements Serializable {
     }
     public String getDay() {
         return day;
+    }
+    public String getDuration() {
+        return duration;
     }
     public Time getTime() {
         return time;
