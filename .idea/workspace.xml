@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="169a93fc-b8f6-4dd9-96fa-28114c93de39" name="Default" comment="GeoLocation API">
+    <list default="true" id="169a93fc-b8f6-4dd9-96fa-28114c93de39" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1216,7 +1216,7 @@
       <workItem from="1498727815862" duration="156000" />
       <workItem from="1498727978617" duration="2423000" />
       <workItem from="1498800919432" duration="3600000" />
-      <workItem from="1499058129823" duration="8792000" />
+      <workItem from="1499058129823" duration="8807000" />
     </task>
     <task id="LOCAL-00001" summary="GeoLocation API">
       <created>1498805141452</created>
@@ -1253,11 +1253,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499067573559</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="GeoLocation API">
+      <created>1499067722192</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1499067722193</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27152000" />
+    <option name="totallyTimeSpent" value="27167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1294" height="810" extended-state="0" />
