@@ -2,6 +2,7 @@ package com.ht.event.controller;
 
 import com.google.gson.Gson;
 import com.ht.event.model.Category;
+import com.ht.event.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
