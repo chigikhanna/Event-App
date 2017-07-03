@@ -1,5 +1,7 @@
 package com.ht.event.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -25,7 +27,7 @@ public class Event implements Serializable {
 //    private Set category;  //many to many
     private float fees;
     //image url
-    //jsp for this -->>>
+
 
     public void setId(Integer id){
         this.id=id;

@@ -1,4 +1,4 @@
-//package com.ht.event.service;
+package com.ht.event.service;
 //
 //import com.ht.event.model.GeoLoc;
 //import com.maxmind.geoip2.DatabaseReader;
@@ -12,7 +12,7 @@
 ///**
 // * Created by tanvigupta on 30/06/17.
 // */
-//public class GeoLocService {
+public class GeoLocService {
 //    private DatabaseReader dbReader;
 //
 //    public GeoLocService() throws IOException {
@@ -33,4 +33,4 @@
 //                response.getLocation().getLongitude().toString();
 //        return new GeoLoc(ip, cityName, latitude, longitude);
 //    }
-//}
+}

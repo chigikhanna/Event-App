@@ -1,9 +1,9 @@
-//package com.ht.event.model;
+package com.ht.event.model;
 //
 ///**
 // * Created by tanvigupta on 30/06/17.
 // */
-//public class GeoLoc {
+public class GeoLoc {
 //    private String ipAddress;
 //    private String city;
 //    private String latitude;
@@ -42,4 +42,4 @@
 //    public String getLongitude() {
 //        return longitude;
 //    }
-//}
+}

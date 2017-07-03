@@ -10,12 +10,12 @@
         <tbody>
         <tr>
             <td>Event Name</td>
-            <td><form:input path="name"/></td>
+            <td><form:input type="text" path="name"/></td>
         </tr>
-        <tr>
-            <td>Location</td>
-            <td><form:input type="" path=""/></td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td>Location</td>--%>
+            <%--<td><form:input type="" path=""/></td>--%>
+        <%--</tr>--%>
         <tr>
             <td>Day</td>
             <td><form:input type="text" path="day"/></td>

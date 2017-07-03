@@ -1,4 +1,4 @@
-//package com.ht.event.controller;
+package com.ht.event.controller;
 //
 //import com.ht.event.model.GeoLoc;
 //import com.ht.event.service.GeoLocService;
@@ -15,7 +15,7 @@
 // */
 //
 //@Controller
-//public class GeoLocController {
+public class GeoLocController {
 //    private GeoLocService locationService;
 //
 //    public GeoLocController() throws IOException {
@@ -33,4 +33,4 @@
 ////        return locationService.getLocation(ipAddress);
 ////    }
 //
-//}
+}
