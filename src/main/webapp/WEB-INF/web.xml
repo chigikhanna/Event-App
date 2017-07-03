@@ -5,11 +5,11 @@
              version="3.1">
 
     <servlet>
-        <servlet-name>dispatcher</servlet-name>
+        <servlet-name>FileUpload</servlet-name>
         <servlet-class>FileUpload</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
+        <servlet-name>FileUpload</servlet-name>
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>
     <session-config>
