@@ -23,7 +23,10 @@ public class Event implements Serializable {
     private Time time;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
-    private Set category;  //many to many
+
+    @ManyToMany
+    private Set category;
+
     private float fees;
     //image url
     //jsp for this -->>>

@@ -4,10 +4,12 @@ import com.ht.event.model.Category;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by chigi on 30-Jun-17.
  */
+@Repository
 public class CategoryDaoImpl implements CategoryDao {
     @Autowired
     private SessionFactory sessionFactory;
