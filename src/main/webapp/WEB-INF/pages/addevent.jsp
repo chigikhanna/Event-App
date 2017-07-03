@@ -13,6 +13,10 @@
             <td><form:input path="name"/></td>
         </tr>
         <tr>
+            <td>Location</td>
+            <td><form:input type="" path=""/></td>
+        </tr>
+        <tr>
             <td>Day</td>
             <td><form:input type="text" path="day"/></td>
         </tr>
@@ -25,12 +29,18 @@
             <td><form:input type="time" path="time"/></td>
         </tr>
         <tr>
-            <td>Location</td>
-            <td><form:input type="" path=""/></td>
+            <td>Duration</td>
+            <td><form:input type="text" path="duration"/></td>
         </tr>
         <tr>
             <td>Category</td>
-            <td><form:input type="" path="category"/></td>
+            <td>
+                <form:checkbox path="category" value="Music"/>Music
+                <form:checkbox path="category" value="Dance"/>Dance
+                <form:checkbox path="category" value="Drama"/>Drama
+                <form:checkbox path="category" value="Food"/>Food
+                <form:checkbox path="category" value="Kids"/>Kids
+            </td>
         </tr>
         <tr>
             <td>Description</td>
