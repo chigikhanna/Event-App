@@ -34,6 +34,7 @@ public class UserController {
 
         String message="You have successfully signed up.";
         modelAndView.addObject("message",message);
+
         String json = new Gson().toJson(user);
         return json;
         //        return modelAndView;
@@ -50,8 +51,10 @@ public class UserController {
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
     public ModelAndView editUserPage(@PathVariable String id) {
+
         ModelAndView modelAndView = new ModelAndView("edituser");
         User user = userService.getUser(Integer.parseInt(id));
+
         modelAndView.addObject("user",user);
         return modelAndView;
     }
@@ -72,8 +75,10 @@ public class UserController {
     public ModelAndView deleteUser(@PathVariable String id){
         ModelAndView modelAndView=new ModelAndView("home");
         userService.deleteUser(Integer.parseInt(id));
+
         String message="Successfully deleted.";
         modelAndView.addObject("message",message);
+
         return modelAndView;
     }
 }

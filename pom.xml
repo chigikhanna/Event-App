@@ -109,6 +109,8 @@
                 <scope>compile</scope>
             </dependency>
 
+
+            <!-- GeoLocation -->
             <dependency>
                 <groupId>com.maxmind.geoip2</groupId>
                 <artifactId>geoip2</artifactId>
