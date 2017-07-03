@@ -10,7 +10,7 @@
         <tbody>
         <tr>
             <td>Event Name</td>
-            <td><form:input path="name"/></td>
+            <td><form:input type="text" path="name" placeholder="Name"/></td>
         </tr>
         <tr>
             <td>Location</td>
@@ -18,11 +18,11 @@
         </tr>
         <tr>
             <td>Day</td>
-            <td><form:input type="text" path="day"/></td>
+            <td><form:input type="text" path="day" placeholder="Eg: Monday"/></td>
         </tr>
         <tr>
             <td>Date</td>
-            <td><form:input type="date" path="date"/></td>
+            <td><form:input type="date" path="date" placeholder="DD/MM/YYYY"/></td>
         </tr>
         <tr>
             <td>Time</td>
