@@ -21,7 +21,7 @@ public class GeoLocController {
     public GeoLocController() throws IOException {
         locationService = new GeoLocService();
     }
-
+//
 //    @RequestMapping(value="/GeoIPTest", method = RequestMethod.POST)
 //    @ResponseBody
 //    public GeoLoc getLocation(
