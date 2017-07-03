@@ -14,19 +14,14 @@ public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
     private String description;
     private Date date;
     private String day;
-    private String duration;
     private Time time;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
-
-    @ManyToMany
-    private Set category;
-
+    private Set category;  //many to many
     private float fees;
     //image url
     //jsp for this -->>>
@@ -45,9 +40,6 @@ public class Event implements Serializable {
     }
     public void setDay(String day){
         this.day=day;
-    }
-    public void setDuration(String duration) {
-        this.duration = duration;
     }
     public void setTime(Time time){
         this.time=time;
@@ -80,9 +72,6 @@ public class Event implements Serializable {
     }
     public String getDay() {
         return day;
-    }
-    public String getDuration() {
-        return duration;
     }
     public Time getTime() {
         return time;

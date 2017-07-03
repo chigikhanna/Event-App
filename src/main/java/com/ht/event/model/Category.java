@@ -15,7 +15,6 @@ public class Category implements Serializable {
 
     private Integer id;
     private String name;
-    private Set event;
 
     public String getName() {
         return name;
@@ -28,13 +27,5 @@ public class Category implements Serializable {
     }
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Set getEvent() {
-        return event;
-    }
-
-    public void setEvent(Set event) {
-        this.event = event;
     }
 }
