@@ -8,6 +8,14 @@ public class GeoLoc {
     private String city;
     private String latitude;
     private String longitude;
+    
+    public GeoLoc(String ip, String cityName, String latitude, String longitude) {
+        this.ipAddress = ip;
+        this.city = cityName;
+        this.latitude = latitude;
+        this.longitude = longitude;
+
+    }
 
     public GeoLoc(String ip, String cityName, String latitude, String longitude) {
         this.ipAddress = ip;
@@ -40,7 +48,6 @@ public class GeoLoc {
     public String getLatitude() {
         return latitude;
     }
-
     public String getLongitude() {
         return longitude;
     }

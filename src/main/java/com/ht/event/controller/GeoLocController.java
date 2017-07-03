@@ -22,15 +22,15 @@ public class GeoLocController {
         locationService = new GeoLocService();
     }
 
-    @RequestMapping(value="/GeoIPTest", method = RequestMethod.POST)
-    @ResponseBody
-    public GeoLoc getLocation(
-            @RequestParam(value="ipAddress", required=true) String ipAddress
-    )
-            throws Exception {
+//    @RequestMapping(value="/GeoIPTest", method = RequestMethod.POST)
+//    @ResponseBody
+//    public GeoLoc getLocation(
+//            @RequestParam(value="ipAddress", required=true) String ipAddress
+//    }
+//            throws Exception {
+//
+//        GeoIPLocationService <String, GeoLoc> locationService = new GeoLocService();
+//        return locationService.getLocation(ipAddress);
+//    }
 
-        GeoIPLocationService <String, GeoLoc> locationService
-                = new GeoLocService();
-        return locationService.getLocation(ipAddress);
-    }
 }

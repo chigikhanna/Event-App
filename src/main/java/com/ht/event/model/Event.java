@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
+import java.util.Set;
 
 @Entity
 @Table(name = "event")
@@ -13,7 +14,6 @@ public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
     private String description;
     private Date date;
@@ -21,7 +21,7 @@ public class Event implements Serializable {
     private Time time;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
-    private String category;    // many to many
+    private Set category;  //many to many
     private float fees;
     //image url
     //jsp for this -->>>
@@ -50,7 +50,7 @@ public class Event implements Serializable {
     public void setLongitude(float longitude){
         this.longitude=longitude;
     }
-    public void setCategory(String category){
+    public void setCategory(Set category){
         this.category=category;
     }
     public void setFees(float fees){
@@ -82,7 +82,7 @@ public class Event implements Serializable {
     public float getLongitude() {
         return longitude;
     }
-    public String getCategory() {
+    public Set getCategory() {
         return category;
     }
     public float getFees() {
