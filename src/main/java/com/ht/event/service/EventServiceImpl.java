@@ -1,7 +1,6 @@
 package com.ht.event.service;
 
 import com.ht.event.model.Event;
-
 import java.util.List;
 
 /**
@@ -14,14 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Component
 @Service
 @Transactional
-
 public class EventServiceImpl implements EventService {
+
     @Autowired
     private EventDao eventDao;
 

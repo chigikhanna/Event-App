@@ -78,7 +78,7 @@
         </tbody>
     </table>
 </form:form>
-
+<p><a href="${pageContext.request.contextPath}/home">Home page</a></p>
 
 </body>
 </html>
