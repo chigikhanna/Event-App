@@ -14,7 +14,6 @@ import java.sql.Time;
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "event_id")
     private Integer id;
 
     private String name;
@@ -28,7 +27,7 @@ public class Event implements Serializable {
 
     @NotNull
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
+    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="event_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
     private Set<Category> category = new HashSet<Category>();
 
     private float fees;
@@ -88,7 +87,6 @@ public class Event implements Serializable {
     public Time getTime() {
         return time;
     }
-
     public String getDuration() {
         return duration;
     }
@@ -105,9 +103,4 @@ public class Event implements Serializable {
     public float getFees() {
         return fees;
     }
-
-    public void addCategory(Category cat){
-        this.category.add(cat);
-    }
-
 }
