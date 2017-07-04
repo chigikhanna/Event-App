@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by chigi on 30-Jun-17.
+ * Created by tanvigupta on 30-Jun-17.
  */
 @Service
 public class CategoryServiceImpl implements CategoryService {

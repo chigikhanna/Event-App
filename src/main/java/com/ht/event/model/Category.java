@@ -19,10 +19,10 @@ public class Category implements Serializable {
 
     private Set<Event> events = new HashSet<Event>();
 
-    public Category(Integer id, String name){
-        this.id=id;
-        this.name=name;
-    }
+//    public Category(Integer id, String name){
+//        this.id=id;
+//        this.name=name;
+//    }
 
     public String getName() {
         return name;

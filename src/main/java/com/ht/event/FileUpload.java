@@ -17,7 +17,7 @@ import java.io.File;
  * Created by tanvigupta on 03/07/17.
  */
 public class FileUpload extends HttpServlet {
-    private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
+    private final String uploadDirectory = "";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
