@@ -8,6 +8,8 @@ import com.ht.event.model.Category;
 
 public interface CategoryDao {
     public void addCategory(Category category);
+
     public Category getCategory(Integer id);
+
     public void deleteCategory(Integer id);
 }

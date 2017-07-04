@@ -2,6 +2,7 @@ package com.ht.event.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -16,16 +17,34 @@ public class Category implements Serializable {
     private Integer id;
     private String name;
 
+    private Set<Event> events = new HashSet<Event>();
+
+    public Category(Integer id, String name){
+        this.id=id;
+        this.name=name;
+    }
+
     public String getName() {
         return name;
     }
     public Integer getId() {
         return id;
     }
+    public Set<Event> getEvents(){
+        return events;
+    }
+
+
     public void setName(String name) {
         this.name = name;
     }
     public void setId(Integer id) {
         this.id = id;
     }
+
+
+    public void addEvent(Event event){
+        this.events.add(event);
+    }
+
 }
