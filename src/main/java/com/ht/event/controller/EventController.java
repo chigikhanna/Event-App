@@ -21,7 +21,7 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-    @RequestMapping(value = "/add", method=RequestMethod.GET)
+    @RequestMapping(value = "/form", method=RequestMethod.GET)
     public ModelAndView addEventPage() {
         ModelAndView modelAndView = new ModelAndView("addevent");
         modelAndView.addObject("event",new Event());
@@ -31,7 +31,7 @@ public class EventController {
     @RequestMapping(value = "/add", method=RequestMethod.POST)
     public String addingEvent(@ModelAttribute Event event){
 
-        ModelAndView modelAndView=new ModelAndView("home");
+        ModelAndView modelAndView=new ModelAndView("addevent");
         eventService.addEvent(event);
 
         String message="Event added.";

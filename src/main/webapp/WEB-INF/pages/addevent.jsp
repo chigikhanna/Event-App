@@ -35,11 +35,11 @@
         <tr>
             <td>Category</td>
             <td>
-                <form:checkbox path="category" value="Music"/>Music
-                <form:checkbox path="category" value="Dance"/>Dance
-                <form:checkbox path="category" value="Drama"/>Drama
-                <form:checkbox path="category" value="Food"/>Food
-                <form:checkbox path="category" value="Kids"/>Kids
+                <%--<form:checkbox path="category" value="Music"/>Music--%>
+                <%--<form:checkbox path="category" value="Dance"/>Dance--%>
+                <%--<form:checkbox path="category" value="Drama"/>Drama--%>
+                <%--<form:checkbox path="category" value="Food"/>Food--%>
+                <%--<form:checkbox path="category" value="Kids"/>Kids--%>
             </td>
         </tr>
         <tr>
@@ -55,13 +55,14 @@
             <td>Select file to uplaod:</td>
             <td>
                 <form action="upload" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file" />
+                    <input type="file" name="file"/>
                     <input type="submit" value="upload" />
                 </form>
+
             </td>
-            <div id="result">
-                <h3>${requestScope["message"]}</h3>
-            </div>
+            <%--<div id="result">--%>
+                <%--<h3>${requestScope["message"]}</h3>--%>
+            <%--</div>--%>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"></td>

@@ -7,13 +7,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LinkController {
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/event")
     public ModelAndView mainPage(){
-        return new ModelAndView(("addevent"));
-    }
-
-    @RequestMapping(value = "/index")
-    public ModelAndView indexPage(){
-        return new ModelAndView("addevent");
+        return new ModelAndView(("redirect"));
     }
 }

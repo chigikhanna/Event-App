@@ -4,9 +4,8 @@
     <title>Form submitted</title>
 </head>
 <body>
-<div id="result">
-    <h3>${requestScope["message"]}</h3>
-    <a href="<s:url value="/event/a"/>">Sign up</a><br>
+<div id="redirect">
+    <a href="<s:url value="/event/form"/>">Enter Event</a><br>
 </div>
 
 </body>

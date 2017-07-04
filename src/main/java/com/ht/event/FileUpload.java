@@ -1,3 +1,5 @@
+package com.ht.event;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -15,7 +17,7 @@ import java.io.File;
  * Created by tanvigupta on 03/07/17.
  */
 public class FileUpload extends HttpServlet {
-    private final String uploadDirectory = "";
+    private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,6 +39,6 @@ public class FileUpload extends HttpServlet {
         } else {
             request.setAttribute("message", "Sorry this Servlet only handles file upload request");
         }
-        request.getRequestDispatcher("/addevent.jsp").forward(request, response);
+        request.getRequestDispatcher("/result.jsp").forward(request, response);
     }
 }
