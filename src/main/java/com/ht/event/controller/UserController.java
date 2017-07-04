@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,22 +18,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-//    @Autowired
-//    UserFormValidator userFormValidator;
-
-//    //Set a form validator
-//    @InitBinder
-//    protected void initBinder(WebDataBinder binder){
-//        binder.setValidator(userFormValidator);
-//    }
-//
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String index(Model model){
-//        lo
-//    }
-//
-
 
     @RequestMapping(value = "/add", method=RequestMethod.GET)
     public ModelAndView addUserPage() {
