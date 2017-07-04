@@ -4,9 +4,11 @@
     <title>Form submitted</title>
 </head>
 <body>
-<div id="redirect">
-    <a href="<s:url value="/event/form"/>">Enter Event</a><br>
-</div>
+<form method="post" action="upload" enctype="multipart/form-data">
+    Select file to upload:
+    <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
+    <input type="submit" value="Upload" />
+</form>
 
 </body>
 </html>
