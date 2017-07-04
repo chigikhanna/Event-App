@@ -9,12 +9,19 @@
     <table>
         <tbody>
         <tr>
-            <td>Event Name</td>
+            <td>Event Name:</td>
             <td><form:input type="text" path="name"/></td>
         </tr>
         <tr>
+            <td>Location:</td>
             <td>Address</td>
-            <td><form:input type="" path="address"/></td>
+            <td><form:input type="text" path="address"/></td>
+            <td>City</td>
+            <td><form:input type="text" path="city"/></td>
+            <td>Country</td>
+            <td><form:input type="text" path="country"/></td>
+            <td>Pin Code</td>
+            <td><form:input type="text" path="pincode"/></td>
         </tr>
         <tr>
             <td>Day</td>
