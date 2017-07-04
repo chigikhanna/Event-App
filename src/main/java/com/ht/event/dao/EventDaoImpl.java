@@ -44,6 +44,7 @@ public class EventDaoImpl implements EventDao {
         eventToUpdate.setDay(event.getDay());
         eventToUpdate.setDuration(event.getDuration());
         eventToUpdate.setTime(event.getTime());
+        eventToUpdate.setAddress(event.getAddress());
         eventToUpdate.setLatitude(event.getLatitude());
         eventToUpdate.setLongitude(event.getLongitude());
         eventToUpdate.setCategory(event.getCategory());

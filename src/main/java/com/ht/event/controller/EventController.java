@@ -14,9 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServlet;
+
 @Controller
 @RequestMapping(value="/event")
-public class EventController {
+public class EventController extends HttpServlet{
+
+    private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
 
     @Autowired
     private EventService eventService;
@@ -28,11 +32,16 @@ public class EventController {
         return modelAndView;
     }
 
+
+
     @RequestMapping(value = "/add", method=RequestMethod.POST)
     public String addingEvent(@ModelAttribute Event event){
 
         ModelAndView modelAndView=new ModelAndView("addevent");
         eventService.addEvent(event);
+
+        //file upload
+
 
         String message="Event added.";
         modelAndView.addObject("message",message);
