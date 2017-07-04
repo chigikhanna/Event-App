@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
- * Created by chigi on 30-Jun-17.
+ * Created by tanvigupta on 30-Jun-17.
  */
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -21,7 +23,6 @@ public class CategoryServiceImpl implements CategoryService {
     public void addCategory(Category category) {
         categoryDao.addCategory(category);
     }
-
 
     @Override
     public Category getCategory(Integer id) {
