@@ -98,16 +98,16 @@
                 <div class="col-sm-10">
                     <form:input type="text" path="fees" class="form-control" id="fees"/>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="image">Upload Image:</label>
-                <div class="col-sm-10">
-                    <form action="upload" method="post" enctype="multipart/form-data" class="form-control">
-                        <input type="file" name="file" id="image" placeholder="Select file to upload:"/>
-                        <input type="submit" value="upload"/>
-                    </form>
-                </div>
-            </div>
+            <%--</div>--%>
+            <%--<div class="form-group">--%>
+                <%--<label class="control-label col-sm-2" for="image">Upload Image:</label>--%>
+                <%--<div class="col-sm-10">--%>
+                    <%--<form action="upload" method="post" enctype="multipart/form-data" class="form-control">--%>
+                        <%--<input type="file" name="file" id="image" placeholder="Select file to upload:"/>--%>
+                        <%--<input type="submit" value="upload"/>--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
