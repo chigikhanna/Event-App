@@ -13,13 +13,12 @@
 <div class="header">
     <h1><a class="logo" href="home.jsp">Event-App</a></h1>
     <div class="header-links">
-        <a href="addevent.jsp">Add Event</a>
-        <a href="listevents.jsp">List Events</a>
+        <a class="header-links-active" href="<s:url value="/event/form"/>">Add Event</a>
+        <a href="<s:url value="/event/list"/>">List Events</a>
     </div>
 </div>
-<%--<div class="boxed" style="width: 800px !important;">--%>
 <div class="container">
-<form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/add" class="form-horizontal">
+<form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/form" class="form-horizontal">
     <div class="form-group">
     <label class="control-label col-sm-2" for="name">Event Name:</label>
     <div class="col-sm-10">
