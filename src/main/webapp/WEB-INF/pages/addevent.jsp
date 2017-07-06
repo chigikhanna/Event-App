@@ -5,7 +5,7 @@
 </head>
 <body>
 <%--${pageContext.request.contextPath}/event/add--%>
-<form:form method="POST" commandName="event" action="/event/add">
+<form:form method="POST" commandName="event" action="/event/add" enctype="multipart/form-data">
     <table>
         <tbody>
         <tr>
