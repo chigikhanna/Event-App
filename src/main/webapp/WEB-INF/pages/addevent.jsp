@@ -98,7 +98,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="description">Description:</label>
         <div class="col-sm-10">
-            <form:input type="text" path="description" class="form-control" id="description"/>
+            <form:textarea path="description" id="description" cols="30" rows="5" class="form-control" />
             <span class="help-block">
             Description of the event in 50 words.
         </span>
