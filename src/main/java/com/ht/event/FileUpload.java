@@ -16,10 +16,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.io.File;
 
-
-/**
- * Created by chigi on 03/07/17.
- */
 public class FileUpload extends HttpServlet {
         private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
 
