@@ -4,8 +4,8 @@
     <title>Add Event</title>
 </head>
 <body>
-
-<form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/add">
+<%--${pageContext.request.contextPath}/event/add--%>
+<form:form method="POST" commandName="event" action="/event/add">
     <table>
         <tbody>
         <tr>
@@ -61,11 +61,7 @@
             <td>Upload Image</td>
             <td>Select file to uplaod:</td>
             <td>
-                <form action="upload" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file"/>
-                    <input type="submit" value="upload" />
-                </form>
-
+                <input type="file" name="file"/>
             </td>
             <%--<div id="result">--%>
                 <%--<h3>${requestScope["message"]}</h3>--%>

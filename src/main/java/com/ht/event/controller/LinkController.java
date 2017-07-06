@@ -11,4 +11,10 @@ public class LinkController {
     public ModelAndView mainPage(){
         return new ModelAndView(("redirect"));
     }
+
+    @RequestMapping(value = "/home")
+    public ModelAndView homePage(){
+        return new ModelAndView(("home"));
+    }
+
 }
