@@ -1,10 +1,7 @@
 package com.ht.event.controller;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+
 import java.util.List;
-import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 import com.ht.event.model.Event;
@@ -33,7 +30,7 @@ public class EventController extends HttpServlet {
     @RequestMapping(value = "/add", method=RequestMethod.POST)
     public String addingEvent(@ModelAttribute Event event){
 
-        ModelAndView modelAndView=new ModelAndView("addevent");
+        ModelAndView modelAndView=new ModelAndView("home");
         eventService.addEvent(event);
 
         String message="Event added.";

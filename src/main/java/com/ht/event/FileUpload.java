@@ -24,6 +24,7 @@ public class FileUpload extends HttpServlet {
         private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
 
     @Override
+//    @RequestMapping(value = "/event/add", method= RequestMethod.POST)
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //process only if multipart content
         if (ServletFileUpload.isMultipartContent(request)) {
