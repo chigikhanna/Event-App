@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1>Add event</h1>
+<div class="eventform">
 <div class="container">
 <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/add" class="form-horizontal">
     <div class="form-group">
@@ -114,6 +115,7 @@
         </div>
     </div>
 </form:form>
+</div>
 </div>
 <p><a href="${pageContext.request.contextPath}/home">Home page</a></p>
 
