@@ -10,3 +10,88 @@
 .form-control{
     width:800px !important;
 }
+
+body {
+    background: #f0f8fd;
+}
+
+.header{
+    z-index: 100;
+    position: fixed;
+    right: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding-left: 100px;
+    margin: 0;
+}
+
+.header a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo:hover{
+    font-size: 36px;
+    transition: .2s ease-out;
+}
+.header-links{
+    top: 35px;
+    display: inline-block;
+    right: 40px;
+    position: absolute;
+}
+.header-links-active{
+    border-bottom: 3px solid;
+}
+
+
+.header-links a{
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 8px;
+    text-transform:uppercase;
+}
+
+.header-links a:hover{
+    color: #fff;
+}
+footer{
+    z-index: 0;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    bottom:0;
+    left:0;
+    right:0;
+    height:auto;
+    width: auto;
+    color: #fff;
+    background-color: #333;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 768px){
+    .header-links a{
+        width: 33%;
+        text-align: center;
+        font-size: 15px;
+        padding: 4px;
+    }
+    .header{
+        height: 94px;
+    }
+
+    footer{
+        left:0;
+        bottom: 0;
+        right: 0;
+        position: relative;
+    }
+
+    .header-links{
+        top: 70px;
+        padding-bottom: 20px;
+    }
+}

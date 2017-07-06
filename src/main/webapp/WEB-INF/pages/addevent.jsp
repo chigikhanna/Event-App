@@ -5,28 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <%--<link rel="stylesheet" href="stylesheet.css">--%>
-
-    <style>
-        .container{
-            width: 800px;
-            background: #ffffff;
-            border-radius: 10px;
-            border: solid black 1px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        body{
-            background: #f0f8fd;
-        }
-    </style>
-
+    <link rel="stylesheet" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Add event</h1>
+<div class="header">
+    <h1><a class="logo" href="home.jsp">Event-App</a></h1>
+    <div class="header-links">
+        <a href="addevent.jsp">Add Event</a>
+        <a href="listevents.jsp">List Events</a>
+    </div>
+</div>
 <%--<div class="boxed" style="width: 800px !important;">--%>
 <div class="container">
 <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/add" class="form-horizontal">
@@ -134,6 +124,10 @@
 </div>
 <%--</div>--%>
 </div>
-<p><a href="${pageContext.request.contextPath}/home">Home page</a></p>
+<%--<p><a href="${pageContext.request.contextPath}/home">Home page</a></p>--%>
+
+<footer>
+    HT Media, Delhi.
+</footer>
 </body>
 </html>
