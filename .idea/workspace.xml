@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="169a93fc-b8f6-4dd9-96fa-28114c93de39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addevent.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addevent.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stylesheet.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stylesheet.css" />
-    </list>
+    <list default="true" id="169a93fc-b8f6-4dd9-96fa-28114c93de39" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="addevent.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addevent.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addevent.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="118" column="6" lean-forward="false" selection-start-line="118" selection-start-column="6" selection-end-line="118" selection-end-column="6" />
+            <state relative-caret-position="311">
+              <caret line="122" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -60,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -1087,7 +1084,7 @@
       <workItem from="1498727978617" duration="2423000" />
       <workItem from="1498800919432" duration="3600000" />
       <workItem from="1499058129823" duration="26878000" />
-      <workItem from="1499323063834" duration="6236000" />
+      <workItem from="1499323063834" duration="6444000" />
     </task>
     <task id="LOCAL-00001" summary="GeoLocation API">
       <created>1498805141452</created>
@@ -1142,7 +1139,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51474000" />
+    <option name="totallyTimeSpent" value="51682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1188" height="810" extended-state="0" />
@@ -1571,18 +1568,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addevent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="118" column="6" lean-forward="false" selection-start-line="118" selection-start-column="6" selection-end-line="118" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/addevent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="122" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="7" />
           <folding />
         </state>
       </provider>
