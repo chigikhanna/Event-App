@@ -83,7 +83,7 @@
                 <form:checkbox path="category" value="Drama" class="form-control" id="category"/>Drama
                 <form:checkbox path="category" value="Food" class="form-control" id="category"/>Food
                 <form:checkbox path="category" value="Kids" class="form-control" id="category"/>Kids
-            <span class="help-block">
+        <span class="help-block">
             Select 1 or more categories the event may belong to.
         </span>
         </div>
