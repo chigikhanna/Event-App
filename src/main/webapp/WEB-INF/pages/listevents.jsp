@@ -31,6 +31,7 @@
     </tr>
     </thead>
     <tbody>
+
     <c:forEach var="event" items="${events}">
         <tr>
             <td>${event.name}</td>
@@ -43,7 +44,7 @@
             <td>${event.country}</td>
             <td>${event.pincode}</td>
             <td>${event.description}</td>
-            <td>${event.category}</td>
+            <%--<td>${event.category}</td>--%>
             <td>${event.fees}</td>
             <td>
                 <a href="${pageContext.request.contextPath}/event/edit/${event.id}">Edit</a><br/>

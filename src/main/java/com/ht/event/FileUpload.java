@@ -4,6 +4,8 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,12 +18,13 @@ import java.io.File;
 
 
 /**
- * Created by tanvigupta on 03/07/17.
+ * Created by chigi on 03/07/17.
  */
 public class FileUpload extends HttpServlet {
         private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
 
     @Override
+//    @RequestMapping(value = "/event/add", method= RequestMethod.POST)
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //process only if multipart content
         if (ServletFileUpload.isMultipartContent(request)) {
@@ -34,13 +37,13 @@ public class FileUpload extends HttpServlet {
                     }
                 }
                 //File uploaded successfully
-                request.setAttribute("message", "File Uploaded Successfully");
+//                request.setAttribute("message", "File Uploaded Successfully");
             } catch (Exception ex) {
-                request.setAttribute("message", "File Upload Failed due to " + ex);
+//                request.setAttribute("message", "File Upload Failed due to " + ex);
             }
         } else {
-            request.setAttribute("message", "Sorry this Servlet only handles file upload request");
+//            request.setAttribute("message", "Sorry this Servlet only handles file upload request");
         }
-        request.getRequestDispatcher("/result.jsp").forward(request, response);
+//        request.getRequestDispatcher("/result.jsp").forward(request, response);
     }
 }

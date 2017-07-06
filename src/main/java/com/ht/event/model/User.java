@@ -1,7 +1,7 @@
 package com.ht.event.model;
 
 
-import com.sun.istack.internal.NotNull;
+//import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class User implements Serializable {
     private Double phone;
     private Integer age;
 
-    @NotNull
+//    @NotNull
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinTable(name="user_event", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="event_id")})
     private Set<Event> events = new HashSet<Event>();

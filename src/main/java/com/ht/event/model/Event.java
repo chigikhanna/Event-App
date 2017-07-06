@@ -1,6 +1,6 @@
 package com.ht.event.model;
 
-import com.sun.istack.internal.NotNull;
+//import com.sun.istack.internal.NotNull;
 
 import java.util.*;
 
@@ -29,7 +29,7 @@ public class Event implements Serializable {
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
 
-    @NotNull
+//    @NotNull
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="event_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
     private Set<Category> category = new HashSet<Category>();

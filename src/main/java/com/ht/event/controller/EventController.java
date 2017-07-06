@@ -1,5 +1,6 @@
 package com.ht.event.controller;
 
+
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -8,19 +9,15 @@ import com.ht.event.model.Event;
 import com.ht.event.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServlet;
+
+import static javax.swing.text.StyleConstants.ModelAttribute;
 
 @Controller
 @RequestMapping(value="/event")
-public class EventController extends HttpServlet{
-
-    private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
+public class EventController extends HttpServlet {
 
     @Autowired
     private EventService eventService;
@@ -32,16 +29,11 @@ public class EventController extends HttpServlet{
         return modelAndView;
     }
 
-
-
     @RequestMapping(value = "/add", method=RequestMethod.POST)
     public String addingEvent(@ModelAttribute Event event){
 
-        ModelAndView modelAndView=new ModelAndView("addevent");
+        ModelAndView modelAndView=new ModelAndView("home");
         eventService.addEvent(event);
-
-        //file upload
-
 
         String message="Event added.";
         modelAndView.addObject("message",message);
@@ -49,15 +41,16 @@ public class EventController extends HttpServlet{
         String json = new Gson().toJson(modelAndView);
         return json;
     }
+
     @RequestMapping(value = "/list")
-    public String listOfEvent(){
-        ModelAndView modelAndView=new ModelAndView("listevent");
+    public ModelAndView listOfEvent(){
+        ModelAndView modelAndView=new ModelAndView("listevents");
 
         List<Event> events=eventService.getEvents();
-
-        String json = new Gson().toJson(events);
-
-        return json;
+        modelAndView.addObject("events",events);
+//        String json = new Gson().toJson(modelAndView);
+//        return json;
+        return modelAndView;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)

@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: tanvigupta
@@ -13,8 +14,8 @@
 <body>
 <h1>Home Page</h1>
 <p>
-    ${message}<br>
-    <a href="<s:url value="/event/add"/>">Add Event</a><br>
+    <br>
+    <a href="<s:url value="/event/form"/>">Add Event</a><br>
     <a href="<s:url value="/event/list"/>">List of Events</a>
 </p>
 </body>
