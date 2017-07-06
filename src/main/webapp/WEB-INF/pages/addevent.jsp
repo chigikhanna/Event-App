@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="/Users/tanvigupta/Documents/ht/Event-App/src/main/webapp/WEB-INF/pages/stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <h1>Add event</h1>
-<div class="eventform">
+<%--<div class="boxed" style="width: 800px !important;">--%>
 <div class="container">
 <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/add" class="form-horizontal">
     <div class="form-group">
@@ -73,11 +73,11 @@
         <label class="control-label col-sm-2" for="category">Category:</label>
         <div class="col-sm-10">
             <form:input type="text" path="category" class="form-control" id="category"/>
-                <%--<form:checkbox path="category" value="Music"/>Music--%>
-                <%--<form:checkbox path="category" value="Dance"/>Dance--%>
-                <%--<form:checkbox path="category" value="Drama"/>Drama--%>
-                <%--<form:checkbox path="category" value="Food"/>Food--%>
-                <%--<form:checkbox path="category" value="Kids"/>Kids--%>
+                <form:checkbox path="category" value="Music"/>Music
+                <form:checkbox path="category" value="Dance"/>Dance
+                <form:checkbox path="category" value="Drama"/>Drama
+                <form:checkbox path="category" value="Food"/>Food
+                <form:checkbox path="category" value="Kids"/>Kids
             <span class="help-block">
             Select 1 or more categories the event may belong to.
         </span>
@@ -116,7 +116,7 @@
     </div>
 </form:form>
 </div>
-</div>
+<%--</div>--%>
 <p><a href="${pageContext.request.contextPath}/home">Home page</a></p>
 
 </body>

@@ -1,7 +1,12 @@
-.eventform{
-    width: 800px;
-    background: #ffffff;
+.container{
+    width: 1000px !important;
+    background: #ffffff !important;
     border-radius: 10px;
+    border: solid black 1px;
     margin: auto;
     padding: 20px;
+}
+
+.form-control{
+    width:800px !important;
 }
