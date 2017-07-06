@@ -5,8 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <%--<link rel="stylesheet" href="${pageContext.request.contextPath}stylesheet.css">--%>
     <link rel="stylesheet" href="stylesheet.css">
+
+    <style>
+        .container{
+            width: 800px;
+            background: #ffffff;
+            border-radius: 10px;
+            border: solid black 1px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -120,8 +130,6 @@
 </div>
 <%--</div>--%>
 </div>
-
 <p><a href="${pageContext.request.contextPath}/home">Home page</a></p>
-
 </body>
 </html>
