@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
+    <%--<link rel="stylesheet" href="stylesheet.css">--%>
 
     <style>
         .container{
@@ -15,6 +15,10 @@
             border: solid black 1px;
             margin: auto;
             padding: 20px;
+        }
+
+        body{
+            background: #f0f8fd;
         }
     </style>
 
@@ -84,12 +88,12 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="category">Category:</label>
         <div class="col-sm-10">
-            <form:input type="text" path="category" class="form-control" id="category"/>
-                <form:checkbox path="category" value="Music"/>Music
-                <form:checkbox path="category" value="Dance"/>Dance
-                <form:checkbox path="category" value="Drama"/>Drama
-                <form:checkbox path="category" value="Food"/>Food
-                <form:checkbox path="category" value="Kids"/>Kids
+            <%--<form:input type="text" path="category" class="form-control" id="category"/>--%>
+                <form:checkbox path="category" value="Music" class="form-control" id="category"/>Music
+                <form:checkbox path="category" value="Dance" class="form-control" id="category"/>Dance
+                <form:checkbox path="category" value="Drama" class="form-control" id="category"/>Drama
+                <form:checkbox path="category" value="Food" class="form-control" id="category"/>Food
+                <form:checkbox path="category" value="Kids" class="form-control" id="category"/>Kids
             <span class="help-block">
             Select 1 or more categories the event may belong to.
         </span>
