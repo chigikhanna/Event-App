@@ -76,19 +76,19 @@
                 <%--<form:checkbox path="category" value="Drama"/>Drama--%>
                 <%--<form:checkbox path="category" value="Food"/>Food--%>
                 <%--<form:checkbox path="category" value="Kids"/>Kids--%>
-        </div>
-        <span class="help-block">
+            <span class="help-block">
             Select 1 or more categories the event may belong to.
         </span>
+        </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="description">Description:</label>
         <div class="col-sm-10">
             <form:input type="text" path="description" class="form-control" id="description"/>
-        </div>
-        <span class="help-block">
+            <span class="help-block">
             Description of the event in 50 words.
         </span>
+        </div>
     </div>
 
     <div class="form-group">
