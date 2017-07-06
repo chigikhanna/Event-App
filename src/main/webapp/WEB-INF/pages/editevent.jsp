@@ -11,7 +11,7 @@
 <body>
 <h1>Edit Event</h1>
 <div class="container">
-    <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/add" class="form-horizontal">
+    <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/edit" class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Event Name:</label>
             <div class="col-sm-10">

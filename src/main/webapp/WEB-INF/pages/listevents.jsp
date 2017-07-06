@@ -46,8 +46,8 @@
             <td>${event.category}</td>
             <td>${event.fees}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/user/edit/${event.id}">Edit</a><br/>
-                <a href="${pageContext.request.contextPath}/user/delete/${event.id}">Delete</a><br/>
+                <a href="${pageContext.request.contextPath}/event/edit/${event.id}">Edit</a><br/>
+                <a href="${pageContext.request.contextPath}/event/delete/${event.id}">Delete</a><br/>
             </td>
         </tr>
     </c:forEach>
