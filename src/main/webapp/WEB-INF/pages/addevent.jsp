@@ -129,7 +129,7 @@
 </div>
 <%--<p><a href="${pageContext.request.contextPath}/home">Home page</a></p>--%>
 <footer>
-    HT Media, Delhi.
+    &copy 2017. HT Media, Delhi. All Rights Reserved.
 </footer>
 </body>
 </html>
