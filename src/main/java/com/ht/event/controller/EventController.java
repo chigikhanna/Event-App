@@ -1,5 +1,8 @@
 package com.ht.event.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 import com.google.gson.Gson;
 import com.ht.event.model.Event;
@@ -27,9 +30,31 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public String addingEvent(@ModelAttribute Event event ,@RequestParam("image") MultipartFile[] files){
+    public String addingEvent(@ModelAttribute Event event ,@RequestParam("image") MultipartFile file){
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
 
-        ModelAndView modelAndView=new ModelAndView("home");
+                // Creating the directory to store file
+                String rootPath = "C:\\Users\\chigi\\Pictures\\Test";
+
+                String name = event.getName();
+                File dir = new File(rootPath + File.separator + name +".jpeg");
+//                if (!dir.exists())
+//                    dir.mkdirs();
+
+                // Create the file on server
+                File serverFile = new File(dir.getAbsolutePath() + File.separator);
+                BufferedOutputStream stream = new BufferedOutputStream(
+                        new FileOutputStream(serverFile));
+                stream.write(bytes);
+                stream.close();
+
+            } catch (Exception e) {
+
+            }
+        }
+    ModelAndView modelAndView=new ModelAndView("home");
         eventService.addEvent(event);
 
         String message="Event added.";
