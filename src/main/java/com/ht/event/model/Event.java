@@ -2,10 +2,11 @@ package com.ht.event.model;
 
 //import com.sun.istack.internal.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.*;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Time;
 
 @Entity
 @Table(name = "event")
@@ -17,10 +18,13 @@ public class Event implements Serializable {
 
     private String name;
     private String description;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date date;
+
     private String day;
     private String duration;
-    private Time time;
+//    private Time time;
     private String address;
     private String city;
     private String country;
@@ -54,9 +58,6 @@ public class Event implements Serializable {
     }
     public void setDuration(String duration){
         this.duration=duration;
-    }
-    public void setTime(Time time){
-        this.time=time;
     }
     public void setAddress(String address) {
         this.address = address;
@@ -102,9 +103,6 @@ public class Event implements Serializable {
     }
     public String getDay() {
         return day;
-    }
-    public Time getTime() {
-        return time;
     }
     public String getDuration() {
         return duration;

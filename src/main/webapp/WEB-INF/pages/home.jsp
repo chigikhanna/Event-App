@@ -10,11 +10,11 @@
 <html>
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="../resources/stylesheet.css">
 </head>
 <body>
 <div class="header">
-    <h1><a class="logo" href="home.jsp">Event-App</a></h1>
+    <h1><a class="logo" href="home">Event-App</a></h1>
     <div class="header-links">
         <a href="<s:url value="/event/form"/>">Add Event</a>
         <a href="<s:url value="/event/list"/>">List Events</a>

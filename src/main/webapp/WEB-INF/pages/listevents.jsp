@@ -54,6 +54,6 @@
     </c:forEach>
     </tbody>
 </table>
-<p><a href="${pageContext.request.contextPath}/home">Home page</a></p>
+<p><a href="${pageContext.request.contextPath}/event/home">Home page</a></p>
 </body>
 </html>

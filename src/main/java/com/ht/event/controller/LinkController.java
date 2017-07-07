@@ -11,7 +11,7 @@ public class LinkController {
         return new ModelAndView(("redirect"));
     }
 
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = "/event/home")
     public ModelAndView homePage(){
         return new ModelAndView(("home"));
     }
