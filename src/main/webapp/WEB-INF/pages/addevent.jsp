@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="header">
-    <h1><a class="logo" href="home.jsp">h<span class="logo=blue">t</span> events</a></h1>
+    <h1><span class="logo" href="home.jsp">h<span class="logo=blue">t</span></span><a class="app" href="home.jsp"> events</a></h1>
     <div class="header-links">
         <a href="<s:url value="/event/form"/>" class="header-links-active">Add Event</a>
         <a href="<s:url value="/event/list"/>">List Events</a>
