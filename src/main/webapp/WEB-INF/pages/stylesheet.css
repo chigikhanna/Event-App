@@ -1,23 +1,22 @@
 .container{
-    width: 1000px !important;
-    background: #ffffff !important;
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+    width: 800px !important;
+    background: #ffffff ;
     border-radius: 10px;
     border: solid black 1px;
     margin: auto;
     padding: 20px;
 }
 
-.form-control{
-    width:800px !important;
-}
-
 body {
-    background: #f0f8fd;
+    background: #fffae6;
 }
 
 .header{
     z-index: 100;
     position: fixed;
+    top: 0 !important;
     right: 0;
     left: 0;
     background-color: #333;
@@ -29,6 +28,10 @@ body {
 .header a{
     text-decoration: none;
     color: #fff;
+}
+
+.logo-blue{
+    color: #22a0ff;
 }
 
 .logo:hover{
@@ -61,7 +64,7 @@ footer{
     z-index: 0;
     font-weight: 800;
     text-align: center;
-    position: relative;
+    position: fixed;
     bottom:0;
     left:0;
     right:0;
@@ -89,6 +92,10 @@ footer{
         bottom: 0;
         right: 0;
         position: relative;
+    }
+
+    .container{
+        width:75%;
     }
 
     .header-links{
