@@ -37,7 +37,6 @@
             <td>${event.name}</td>
             <td>${event.day}</td>
             <td>${event.date}</td>
-            <td>${event.time}</td>
             <td>${event.duration}</td>
             <td>${event.address}</td>
             <td>${event.city}</td>
