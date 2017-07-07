@@ -1,10 +1,9 @@
 package com.ht.event.dao;
 
-
 import java.util.List;
 import java.util.Set;
-
 import com.ht.event.model.Event;
+
 /**
  * Created by tanvigupta on 28/06/17.
  */

@@ -8,6 +8,7 @@ import java.util.Set;
 /**
  * Created by tanvigupta on 30-Jun-17.
  */
+
 @Entity
 @Table(name = "category")
 public class Category implements Serializable {

@@ -72,6 +72,7 @@ footer{
     padding: 20px;
 }
 
+
 @media only screen and (max-width: 768px){
     .header-links a{
         width: 33%;

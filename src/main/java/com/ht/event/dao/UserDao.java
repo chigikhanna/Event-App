@@ -1,7 +1,6 @@
 package com.ht.event.dao;
 
 import java.util.List;
-
 import com.ht.event.model.User;
 
 public interface UserDao {

@@ -13,12 +13,13 @@
 <div class="header">
     <h1><a class="logo" href="home.jsp">Event-App</a></h1>
     <div class="header-links">
-        <a class="header-links-active" href="<s:url value="/event/form"/>">Add Event</a>
+        <a href="<s:url value="/event/form"/>" class="header-links-active">Add Event</a>
         <a href="<s:url value="/event/list"/>">List Events</a>
     </div>
 </div>
 <div class="container">
 <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/form" class="form-horizontal">
+<form:errors path="*" cssClass="errorblock" element="div" />
     <div class="form-group">
     <label class="control-label col-sm-2" for="name">Event Name:</label>
     <div class="col-sm-10">
@@ -75,19 +76,23 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2" for="category">Category:</label>
+        <label class="control-label col-sm-2">Category:</label>
         <div class="col-sm-10">
             <%--<form:input type="text" path="category" class="form-control" id="category"/>--%>
-                <form:checkbox path="category" value="Music" class="form-control" id="category"/>Music
-                <form:checkbox path="category" value="Dance" class="form-control" id="category"/>Dance
-                <form:checkbox path="category" value="Drama" class="form-control" id="category"/>Drama
-                <form:checkbox path="category" value="Food" class="form-control" id="category"/>Food
-                <form:checkbox path="category" value="Kids" class="form-control" id="category"/>Kids
+                <%--<form:checkbox path="category" value="Music" class="form-control" id="category"/>Music--%>
+                <%--<form:checkbox path="category" value="Dance" class="form-control" id="category"/>Dance--%>
+                <%--<form:checkbox path="category" value="Drama" class="form-control" id="category"/>Drama--%>
+                <%--<form:checkbox path="category" value="Food" class="form-control" id="category"/>Food--%>
+                <%--<form:checkbox path="category" value="Kids" class="form-control" id="category"/>Kids--%>
+
+
+
         <span class="help-block">
             Select 1 or more categories the event may belong to.
         </span>
         </div>
     </div>
+
     <div class="form-group">
         <label class="control-label col-sm-2" for="description">Description:</label>
         <div class="col-sm-10">
@@ -121,10 +126,8 @@
     </div>
 </form:form>
 </div>
-<%--</div>--%>
 </div>
 <%--<p><a href="${pageContext.request.contextPath}/home">Home page</a></p>--%>
-
 <footer>
     HT Media, Delhi.
 </footer>

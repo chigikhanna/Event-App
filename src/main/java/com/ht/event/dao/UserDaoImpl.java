@@ -1,15 +1,12 @@
 package com.ht.event.dao;
 
-
 import java.util.List;
-
 import com.ht.event.model.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository

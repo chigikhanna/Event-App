@@ -17,7 +17,7 @@ import java.util.List;
 import java.io.File;
 
 public class FileUpload extends HttpServlet {
-        private final String uploadDirectory = "C:\\Users\\chigi\\Pictures\\Test";
+        private final String uploadDirectory = "/Users/tanvigupta/Documents/ht/";
 
     @Override
 //    @RequestMapping(value = "/event/add", method= RequestMethod.POST)

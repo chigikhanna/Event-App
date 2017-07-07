@@ -1,7 +1,6 @@
 package com.ht.event.controller;
 
 import java.util.List;
-
 import com.google.gson.Gson;
 import com.ht.event.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ht.event.service.UserService;
+
 @Controller
 @RequestMapping(value="/user")
 public class UserController {
