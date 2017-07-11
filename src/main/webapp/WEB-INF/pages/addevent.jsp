@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -81,14 +82,9 @@
         <label class="control-label col-sm-2">Category:</label>
         <div class="col-sm-10">
             <%--<form:input type="text" path="category" class="form-control" id="category"/>--%>
-                <%--<form:checkbox path="category" value="Music" class="form-control" id="category"/>Music--%>
-                <%--<form:checkbox path="category" value="Dance" class="form-control" id="category"/>Dance--%>
-                <%--<form:checkbox path="category" value="Drama" class="form-control" id="category"/>Drama--%>
-                <%--<form:checkbox path="category" value="Food" class="form-control" id="category"/>Food--%>
-                <%--<form:checkbox path="category" value="Kids" class="form-control" id="category"/>Kids--%>
-
-
-
+                <%--<c:forEach var="category" items="${categories}">--%>
+                    <%--<checkbox name="category" value="${category.name}" class="form-control" id="category"/>"${category.name}"--%>
+                <%--</c:forEach>--%>
         <span class="help-block">
             Select 1 or more categories the event may belong to.
         </span>

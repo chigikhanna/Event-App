@@ -31,6 +31,7 @@ public class EventController extends HttpServlet {
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
     public String addingEvent(@ModelAttribute Event event ,@RequestParam("image") MultipartFile file){
+
         if (!file.isEmpty()) {
             try {
                 byte[] bytes = file.getBytes();
@@ -70,8 +71,8 @@ public class EventController extends HttpServlet {
 
         List<Event> events=eventService.getEvents();
         modelAndView.addObject("events",events);
-//        String json = new Gson().toJson(modelAndView);
-//        return json;
+//        String event = new Gson().toJson(modelAndView);
+//        return event;
         return modelAndView;
     }
 

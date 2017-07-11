@@ -12,4 +12,5 @@ public interface CategoryService {
     public Category getCategory(Integer id);
 //    public List<Category> getCategory();
     public void deleteCategory(Integer id);
+    public List<Category> getCategories();
 }

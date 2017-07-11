@@ -1,10 +1,13 @@
 package com.ht.event.dao;
 
 import com.ht.event.model.Category;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by tanvigupta on 30-Jun-17.
@@ -37,4 +40,9 @@ public class CategoryDaoImpl implements CategoryDao {
             getCurrentSession().delete(category);
     }
 
+    @Override
+    public List<Category> getCategories() {
+        Criteria criteria = getCurrentSession().createCriteria(Category.class);
+        return criteria.list();
+    }
 }
