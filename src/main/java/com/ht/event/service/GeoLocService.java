@@ -4,11 +4,6 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.model.GeocodingResult;
 import com.ht.event.model.Event;
-import jdk.nashorn.internal.parser.JSONParser;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -30,7 +25,6 @@ public class GeoLocService {
                 reader.close();
         }
     }
-
     public double getlat(Event event) throws Exception {
 
         String location = event.getAddress() + " " + event.getCity() + " " + event.getCountry() + " " + event.getPincode();
@@ -46,7 +40,6 @@ public class GeoLocService {
         GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyAB8O9iXUkHDvWsPnJ8AM-GJ5KcIobOMxU");
         GeocodingResult[] results = GeocodingApi.geocode(context, location).await();
         double lng = results[0].geometry.location.lng;
-
         return lng;
     }
 
