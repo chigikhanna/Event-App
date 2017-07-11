@@ -1,12 +1,14 @@
 package com.ht.event.controller;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.io.*;
+import java.net.URL;
 import java.util.List;
 import com.google.gson.Gson;
 import com.ht.event.model.Event;
 import com.ht.event.service.EventService;
+import com.ht.event.service.GeoLocService;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +32,7 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public String addingEvent(@ModelAttribute Event event ,@RequestParam("image") MultipartFile file){
+    public ModelAndView addingEvent(@ModelAttribute Event event ,@RequestParam("image") MultipartFile file) throws Exception {
 
         if (!file.isEmpty()) {
             try {
@@ -56,13 +58,18 @@ public class EventController extends HttpServlet {
             }
         }
     ModelAndView modelAndView=new ModelAndView("home");
-        eventService.addEvent(event);
 
+        GeoLocService obj = new GeoLocService();
+        double lat = obj.getlat(event);
+        double lng = obj.getlong(event);
+
+        event.setLatitude((float) lat);
+        event.setLongitude((float) lng);
+        eventService.addEvent(event);
         String message="Event added.";
         modelAndView.addObject("message",message);
 
-        String json = new Gson().toJson(modelAndView);
-        return json;
+        return modelAndView;
     }
 
     @RequestMapping(value = "/list")

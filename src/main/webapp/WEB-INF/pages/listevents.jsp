@@ -18,12 +18,13 @@
         <th>Name</th>
         <th>Day</th>
         <th>Date</th>
-        <th>Time</th>
         <th>Duration</th>
         <th>Address</th>
         <th>City</th>
         <th>Country</th>
         <th>Pin Code</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
         <th>Description</th>
         <th>Category</th>
         <th>Fees</th>
@@ -42,6 +43,8 @@
             <td>${event.city}</td>
             <td>${event.country}</td>
             <td>${event.pincode}</td>
+            <td>${event.latitude}</td>
+            <td>${event.longitude}</td>
             <td>${event.description}</td>
             <%--<td>${event.category}</td>--%>
             <td>${event.fees}</td>
