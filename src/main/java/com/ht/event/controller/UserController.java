@@ -3,6 +3,7 @@ package com.ht.event.controller;
 import java.util.List;
 import com.google.gson.Gson;
 import com.ht.event.model.User;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -27,18 +28,16 @@ public class UserController {
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public String addingUser(@ModelAttribute User user){
+    public ModelAndView addingUser(@ModelAttribute User user){
 
         ModelAndView modelAndView=new ModelAndView("home");
         userService.addUser(user);
 
         String message="You have successfully signed up.";
         modelAndView.addObject("message",message);
-
-        String json = new Gson().toJson(user);
-        return json;
-        //        return modelAndView;
+        return modelAndView;
     }
+
     @RequestMapping(value = "/list", produces= MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody String listOfUsers(){
         ModelAndView modelAndView=new ModelAndView("listuser");
@@ -62,9 +61,7 @@ public class UserController {
     public ModelAndView editingUser(@ModelAttribute User user) {
 
         ModelAndView modelAndView = new ModelAndView("home");
-
         userService.updateUser(user);
-
         String message = "User details were successfully edited.";
         modelAndView.addObject("message", message);
 

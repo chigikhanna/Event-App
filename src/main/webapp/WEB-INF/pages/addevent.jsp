@@ -47,7 +47,6 @@
             <form:input type="text" path="country" class="form-control" id="country" placeholder="Enter country"/>
         </div>
     </div>
-
     <div class="form-group">
         <label class="control-label col-sm-2" for="pincode">Pin Code:</label>
         <div class="col-sm-10">

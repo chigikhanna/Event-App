@@ -26,7 +26,6 @@ public class User implements Serializable {
     private String email;
     private String pw;
     private Double phone;
-    private Integer age;
 
 //    @NotNull
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
@@ -49,9 +48,6 @@ public class User implements Serializable {
     public void setPhone(Double phone) {
         this.phone = phone;
     }
-    public void setAge (Integer age){
-            this.age = age;
-        }
     public void setEvents(Set<Event> events) {
         this.events = events;
     }
@@ -70,9 +66,6 @@ public class User implements Serializable {
     }
     public Double getPhone() {
         return phone;
-    }
-    public Integer getAge() {
-        return age;
     }
     public Set<Event> getEvents() {
         return events;

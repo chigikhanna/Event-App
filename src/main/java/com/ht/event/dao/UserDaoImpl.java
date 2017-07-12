@@ -33,7 +33,6 @@ public class UserDaoImpl implements UserDao {
         userToUpdate.setPw(user.getPw());
         userToUpdate.setPhone(user.getPhone());
         userToUpdate.setEvents(user.getEvents());
-        userToUpdate.setAge(user.getAge());
 
         getCurrentSession().update(userToUpdate);
     }
