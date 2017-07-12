@@ -24,6 +24,7 @@ public class GeoLocService {
         GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyAB8O9iXUkHDvWsPnJ8AM-GJ5KcIobOMxU");
         GeocodingResult[] results = GeocodingApi.geocode(context, location).await();
         double lng = results[0].geometry.location.lng;
+
         return lng;
     }
 
