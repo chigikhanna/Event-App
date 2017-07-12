@@ -3,6 +3,9 @@ package com.ht.event.controller;
 import java.io.*;
 import java.net.URL;
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.ht.event.model.Event;
 import com.ht.event.service.EventService;
@@ -14,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServlet;
 import static javax.swing.text.StyleConstants.ModelAttribute;
 
@@ -73,11 +78,13 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/list")
-    public ModelAndView listOfEvent(){
+    public ModelAndView listOfEvent() throws JsonProcessingException {
         ModelAndView modelAndView=new ModelAndView("listevents");
 
         List<Event> events=eventService.getEvents();
-        modelAndView.addObject("events",events);
+//        modelAndView.addObject("events",events);
+        ObjectMapper mapper = new ObjectMapper();
+        modelAndView.addObject("events", mapper.writeValueAsString(events));
 //        String event = new Gson().toJson(modelAndView);
 //        return event;
         return modelAndView;

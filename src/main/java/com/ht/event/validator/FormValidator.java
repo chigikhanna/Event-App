@@ -15,15 +15,15 @@ public class FormValidator implements Validator{
     public boolean supports(Class eventClass) {
         return Event.class.isAssignableFrom(eventClass);
     }
-
-    @Override
+//
+//    @Override
     public void validate(Object o, Errors errors) {
-        Event e = (Event) o;
-
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "required.category");
-
-        if("NONE".equals(e.getCategory())){
-            errors.rejectValue("category","required.category");
-        }
+//        Event e = (Event) o;
+//
+//        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "required.category");
+//
+//        if("NONE".equals(e.getCategory())){
+//            errors.rejectValue("category","required.category");
+//        }
     }
 }

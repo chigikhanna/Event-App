@@ -47,7 +47,7 @@ public class EventDaoImpl implements EventDao {
         eventToUpdate.setPincode(event.getPincode());
         eventToUpdate.setLatitude(event.getLatitude());
         eventToUpdate.setLongitude(event.getLongitude());
-        eventToUpdate.setCategory(event.getCategory());
+//        eventToUpdate.setCategory(event.getCategory());
         eventToUpdate.setFees(event.getFees());
 
         getCurrentSession().update(eventToUpdate);
