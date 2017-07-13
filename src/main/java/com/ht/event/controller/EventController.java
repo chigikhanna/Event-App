@@ -50,7 +50,6 @@ public class EventController extends HttpServlet {
                 File dir = new File(rootPath + File.separator + name +".jpeg");
 //                if (!dir.exists())
 //                    dir.mkdirs();
-
                 // Create the file on server
                 File serverFile = new File(dir.getAbsolutePath() + File.separator);
                 BufferedOutputStream stream = new BufferedOutputStream(
@@ -88,6 +87,16 @@ public class EventController extends HttpServlet {
 //        String event = new Gson().toJson(modelAndView);
 //        return event;
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/api/list")//for android
+    public String listOfEventJson() throws JsonProcessingException {
+        ModelAndView modelAndView=new ModelAndView();
+
+        List<Event> events=eventService.getEvents();
+        modelAndView.addObject("events",events);
+        String event = new Gson().toJson(events);
+        return event;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
