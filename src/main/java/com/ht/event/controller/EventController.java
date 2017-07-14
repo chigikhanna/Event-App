@@ -89,16 +89,6 @@ public class EventController extends HttpServlet {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/api/list")//for android
-    public String listOfEventJson() throws JsonProcessingException {
-        ModelAndView modelAndView=new ModelAndView();
-
-        List<Event> events=eventService.getEvents();
-        modelAndView.addObject("events",events);
-        String event = new Gson().toJson(events);
-        return event;
-    }
-
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
     public ModelAndView editEventPage(@PathVariable String id) {
         ModelAndView modelAndView = new ModelAndView("editevent");
