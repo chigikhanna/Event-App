@@ -2,6 +2,7 @@ package com.ht.event.controller;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -116,5 +117,25 @@ public class EventController extends HttpServlet {
         String message="Successfully deleted.";
         modelAndView.addObject("message",message);
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public ModelAndView search(@RequestParam("searchText") String searchText) throws Exception
+    {
+        List<Event> allFound = eventService.searchForEvent(searchText);
+        List<Event> eventModels = new ArrayList<Event>();
+
+        for (Event b : allFound)
+        {
+            Event bm = new Event();
+            bm.setName(b.getName());
+            bm.setCity(b.getCity());
+
+            eventModels.add(bm);
+        }
+
+        ModelAndView mav = new ModelAndView("eventSearchResult");
+        mav.addObject("foundEvents", eventModels);
+        return mav;
     }
 }

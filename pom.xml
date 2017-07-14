@@ -13,9 +13,7 @@
         <mysql.connector.version>5.1.21</mysql.connector.version>
         <spring.version>3.2.2.RELEASE</spring.version>
     </properties>
-
-        <dependencies>
-
+    <dependencies>
             <!-- DB related dependencies -->
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -143,8 +141,13 @@
                 <artifactId>commons-io</artifactId>
                 <version>2.4</version>
             </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
 
-            <!--Json-->
+        <!--Json-->
 
             <dependency>
                 <groupId>org.json</groupId>
@@ -152,7 +155,40 @@
                 <version>20090211</version>
             </dependency>
 
-        </dependencies>
+            <!--Hibernate Search-->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-search-engine</artifactId>
+                <version>4.3.0.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-search-orm</artifactId>
+                <version>5.7.1.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-search</artifactId>
+                <version>5.8.0.Beta3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate</artifactId>
+                <version>3.2.6.ga</version>
+            </dependency>
+        <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-annotations</artifactId>
+                <version>3.5.6-Final</version>
+            </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+    </dependencies>
 
         <repositories>
             <repository>

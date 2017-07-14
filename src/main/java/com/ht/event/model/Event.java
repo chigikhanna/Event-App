@@ -1,7 +1,6 @@
 package com.ht.event.model;
 
-//import com.sun.istack.internal.NotNull;
-
+import org.hibernate.search.annotations.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.*;
@@ -9,6 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Indexed
 @Table(name = "event")
 
 public class Event implements Serializable {
@@ -16,7 +16,9 @@ public class Event implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     private String name;
+
     private String description;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -26,8 +28,12 @@ public class Event implements Serializable {
     private String duration;
 //    private Time time;
     private String address;
+
+    @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String city;
+
     private String country;
+
     private String pincode;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
