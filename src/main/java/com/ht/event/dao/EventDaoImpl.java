@@ -61,12 +61,12 @@ public class EventDaoImpl implements EventDao {
             QueryBuilder qb = fullTextSession.getSearchFactory()
                     .buildQueryBuilder().forEntity(Event.class).get();
             org.apache.lucene.search.Query query = qb
-                    .keyword().onFields("description", "title", "author")
+                    .keyword().onFields("name", "city")
                     .matching(searchText)
                     .createQuery();
 
             org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(query, Event.class);
-
+//            http://hibernate.org/search/documentation/getting-started/
 //            https://www.codeproject.com/Articles/830529/Integrating-Full-Text-Search-to-Spring-MVC-with-Hi
             List<Event> results = hibQuery.list();
             return results;
@@ -76,7 +76,6 @@ public class EventDaoImpl implements EventDao {
             throw e;
         }
     }
-
 
     @Override
     public void addEvent(Event event) {

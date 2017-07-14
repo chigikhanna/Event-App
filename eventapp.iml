@@ -102,7 +102,7 @@
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" level="project" />
     <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.0.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-facet:3.6.2" level="project" />
-    <orderEntry type="library" name="Maven: org.hibernate:hibernate-search-orm:5.8.0.Beta3" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-search-orm:5.7.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-annotations:3.5.6-Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-commons-annotations:3.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.1" level="project" />
