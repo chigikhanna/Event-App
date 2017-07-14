@@ -29,7 +29,7 @@ public class APIController {
     private UserService userService;
 
     @RequestMapping(value = "/event/list", produces= MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String listOfEventsJson() throws JsonProcessingException {
+    public @ResponseBody String listOfEventsJson(){
         List<Event> events=eventService.getEvents();
         String event = new Gson().toJson(events);
         return event;

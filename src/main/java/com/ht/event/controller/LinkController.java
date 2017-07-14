@@ -16,4 +16,9 @@ public class LinkController {
         return new ModelAndView(("home"));
     }
 
+    @RequestMapping(value = "/event/search")
+    public ModelAndView search(){
+        return new ModelAndView(("eventSearch"));
+    }
+
 }

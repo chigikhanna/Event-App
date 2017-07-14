@@ -18,6 +18,7 @@
     <div class="header-links">
         <a href="<s:url value="/event/form"/>">Add Event</a>
         <a href="<s:url value="/event/list"/>">List Events</a>
+        <a href="<s:url value="/event/search"/>">Search Events</a>
     </div>
 </div>
 </body>
