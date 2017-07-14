@@ -65,8 +65,7 @@ public class EventDaoImpl implements EventDao {
                     .matching(searchText)
                     .createQuery();
 
-            org.hibernate.Query hibQuery =
-                    fullTextSession.createFullTextQuery(query, Event.class);
+            org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(query, Event.class);
 
 //            https://www.codeproject.com/Articles/830529/Integrating-Full-Text-Search-to-Spring-MVC-with-Hi
             List<Event> results = hibQuery.list();
