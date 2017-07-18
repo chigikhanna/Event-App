@@ -1,6 +1,7 @@
 package com.ht.event.model;
 
 import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.*;

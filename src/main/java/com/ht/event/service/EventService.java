@@ -9,6 +9,6 @@ public interface EventService {
     public Event getEvent(Integer id);
     public void deleteEvent(Integer id);
     public void indexEvents() throws Exception;
-    public List<Event> searchForEvent(String searchText);
+    public List<Event> searchForEvent(String searchText) throws Exception;
     public List<Event> getEvents();
 }

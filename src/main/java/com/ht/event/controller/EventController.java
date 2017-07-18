@@ -120,7 +120,7 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public ModelAndView search(@RequestParam("searchText") String searchText) throws Exception
+    public ModelAndView search(@RequestParam("search") String searchText) throws Exception
     {
         List<Event> allFound = eventService.searchForEvent(searchText);
         List<Event> eventModels = new ArrayList<Event>();
@@ -134,8 +134,8 @@ public class EventController extends HttpServlet {
             eventModels.add(bm);
         }
 
-        ModelAndView mav = new ModelAndView("eventSearchResult");
-        mav.addObject("foundEvents", eventModels);
-        return mav;
+        ModelAndView modelAndView = new ModelAndView("eventSearchResult");
+        modelAndView.addObject("foundEvents", eventModels);
+        return modelAndView;
     }
 }

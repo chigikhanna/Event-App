@@ -18,11 +18,9 @@ import org.springframework.stereotype.Repository;
 import com.ht.event.model.Event;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 
 @Repository
 @Transactional
-
 public class EventDaoImpl implements EventDao {
 
     @Autowired
@@ -33,7 +31,7 @@ public class EventDaoImpl implements EventDao {
         return sessionFactory.getCurrentSession();
     }
 
-    @Transactional
+    @Override
     public void indexEvents() throws Exception
     {
         try
@@ -49,7 +47,7 @@ public class EventDaoImpl implements EventDao {
         }
     }
 
-    @Transactional
+    @Override
     public List<Event> searchForEvent(String searchText) throws Exception
     {
         try
@@ -65,8 +63,7 @@ public class EventDaoImpl implements EventDao {
                     .matching(searchText)
                     .createQuery();
 
-            org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(query, Event.class);
-//            http://hibernate.org/search/documentation/getting-started/
+            org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(query, Event.class); //<<--Error
 //            https://www.codeproject.com/Articles/830529/Integrating-Full-Text-Search-to-Spring-MVC-with-Hi
             List<Event> results = hibQuery.list();
             return results;
