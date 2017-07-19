@@ -1,13 +1,17 @@
 package com.ht.event.model;
 
-//import com.sun.istack.internal.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+//import org.hibernate.search.annotations.*;
+//import org.hibernate.search.annotations.Index;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.*;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Time;
 
 @Entity
+//@Indexed
 @Table(name = "event")
 
 public class Event implements Serializable {
@@ -15,23 +19,31 @@ public class Event implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+//    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     private String name;
+
     private String description;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date date;
+
     private String day;
     private String duration;
-    private Time time;
+    //    private Time time;
     private String address;
+
+//    @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String city;
+
     private String country;
+
     private String pincode;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
 
-//    @NotNull
-    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="event_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
-    private Set<Category> category = new HashSet<Category>();
+//    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+//    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="event_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
+//    private Set<Category> category = new HashSet<Category>();
 
     private float fees;
     //image url
@@ -55,9 +67,6 @@ public class Event implements Serializable {
     public void setDuration(String duration){
         this.duration=duration;
     }
-    public void setTime(Time time){
-        this.time=time;
-    }
     public void setAddress(String address) {
         this.address = address;
     }
@@ -80,9 +89,9 @@ public class Event implements Serializable {
     public void setLongitude(float longitude){
         this.longitude=longitude;
     }
-    public void setCategory(Set<Category> category){
-        this.category=category;
-    }
+    //    public void setCategory(Set<Category> category){
+//        this.category=category;
+//    }
     public void setFees(float fees){
         this.fees=fees;
     }
@@ -102,9 +111,6 @@ public class Event implements Serializable {
     }
     public String getDay() {
         return day;
-    }
-    public Time getTime() {
-        return time;
     }
     public String getDuration() {
         return duration;
@@ -131,9 +137,9 @@ public class Event implements Serializable {
     public float getLongitude() {
         return longitude;
     }
-    public Set<Category> getCategory() {
-        return category;
-    }
+    //    public Set<Category> getCategory() {
+//        return category;
+//    }
     public float getFees() {
         return fees;
     }

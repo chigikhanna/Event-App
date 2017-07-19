@@ -6,6 +6,7 @@ package com.ht.event.dao;
 
 import java.util.List;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-
 public class EventDaoImpl implements EventDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+
 
     private Session getCurrentSession(){
 
@@ -41,14 +42,13 @@ public class EventDaoImpl implements EventDao {
         eventToUpdate.setDate(event.getDate());
         eventToUpdate.setDay(event.getDay());
         eventToUpdate.setDuration(event.getDuration());
-        eventToUpdate.setTime(event.getTime());
         eventToUpdate.setCity(event.getCity());
         eventToUpdate.setAddress(event.getAddress());
         eventToUpdate.setCountry(event.getCountry());
         eventToUpdate.setPincode(event.getPincode());
         eventToUpdate.setLatitude(event.getLatitude());
         eventToUpdate.setLongitude(event.getLongitude());
-        eventToUpdate.setCategory(event.getCategory());
+//        eventToUpdate.setCategory(event.getCategory());
         eventToUpdate.setFees(event.getFees());
 
         getCurrentSession().update(eventToUpdate);

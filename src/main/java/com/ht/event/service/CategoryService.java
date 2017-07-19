@@ -10,6 +10,7 @@ import java.util.List;
 public interface CategoryService {
     public void addCategory(Category category);
     public Category getCategory(Integer id);
-//    public List<Category> getCategory();
+    //    public List<Category> getCategory();
     public void deleteCategory(Integer id);
+    public List<Category> getCategories();
 }

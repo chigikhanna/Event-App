@@ -1,6 +1,9 @@
 package com.ht.event.controller;
 
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.ht.event.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,35 +21,31 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/add", method=RequestMethod.GET)
-    public ModelAndView addUserPage() {
-        ModelAndView modelAndView = new ModelAndView("adduser");
-        modelAndView.addObject("user",new User());
-
-        return modelAndView;
-    }
+//    @RequestMapping(value = "/add", method=RequestMethod.GET)
+//    public ModelAndView addUserPage() {
+//        ModelAndView modelAndView = new ModelAndView("adduser");
+//        modelAndView.addObject("user",new User());
+//
+//        return modelAndView;
+//    }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public String addingUser(@ModelAttribute User user){
+    public ModelAndView addingUser(@ModelAttribute User user){
 
         ModelAndView modelAndView=new ModelAndView("home");
         userService.addUser(user);
 
-        String message="You have successfully signed up.";
-        modelAndView.addObject("message",message);
-
-        String json = new Gson().toJson(user);
-        return json;
-        //        return modelAndView;
+        return modelAndView;
     }
-    @RequestMapping(value = "/list", produces= MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String listOfUsers(){
+    @RequestMapping(value = "/list")
+    public ModelAndView listOfUsers() throws JsonProcessingException {
         ModelAndView modelAndView=new ModelAndView("listuser");
 
         List<User> users=userService.getUsers();
-        String json = new Gson().toJson(users);
+        ObjectMapper mapper = new ObjectMapper();
+        modelAndView.addObject("users", mapper.writeValueAsString(users));
 
-        return json;
+        return modelAndView;
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)

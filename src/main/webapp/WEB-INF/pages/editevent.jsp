@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <h1>Edit Event</h1>
 <div class="container">
-    <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/edit" class="form-horizontal">
+    <form:form method="POST" commandName="event" action="${pageContext.request.contextPath}/event/edit/${event.id}" class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Event Name:</label>
             <div class="col-sm-10">
@@ -56,10 +57,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="time">Time:</label>
-            <div class="col-sm-10">
-                <form:input type="time" path="time" class="form-control" id="time"/>
-            </div>
+                <%--<label class="control-label col-sm-2" for="time">Time:</label>--%>
+                <%--<div class="col-sm-10">--%>
+                <%--<form:input type="time" path="time" class="form-control" id="time"/>--%>
+                <%--</div>--%>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="duration">Duration:</label>
@@ -70,7 +71,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="category">Category:</label>
             <div class="col-sm-10">
-                <form:input type="text" path="category" class="form-control" id="category"/>
+                    <%--<form:input type="text" path="category" class="form-control" id="category"/>--%>
                     <%--<form:checkbox path="category" value="Music"/>Music--%>
                     <%--<form:checkbox path="category" value="Dance"/>Dance--%>
                     <%--<form:checkbox path="category" value="Drama"/>Drama--%>
@@ -94,10 +95,10 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="image">Select file to upload:</label>
             <div class="col-sm-10">
-                <form action="upload" method="post" enctype="multipart/form-data" class="form-control">
-                    <input type="file" name="file" id="image"/>
-                    <input type="submit" value="upload"/>
-                </form>
+                    <%--<form action="upload" method="post" enctype="multipart/form-data" class="form-control">--%>
+                <input type="file" name="file" id="image"/>
+                    <%--<input type="submit" value="upload"/>--%>
+                    <%--</form>--%>
             </div>
         </div>
 

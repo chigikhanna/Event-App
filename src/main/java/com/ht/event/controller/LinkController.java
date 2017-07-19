@@ -6,10 +6,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LinkController {
-    @RequestMapping(value = "/event")
-    public ModelAndView mainPage(){
-        return new ModelAndView(("redirect"));
-    }
 
     @RequestMapping(value = "/home")
     public ModelAndView homePage(){

@@ -1,13 +1,25 @@
 package com.ht.event.controller;
 
+import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.ht.event.model.Event;
 import com.ht.event.service.EventService;
+import com.ht.event.service.GeoLocService;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServlet;
 import static javax.swing.text.StyleConstants.ModelAttribute;
 
@@ -26,26 +38,53 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public String addingEvent(@ModelAttribute Event event){
+    public ModelAndView addingEvent(@ModelAttribute Event event ,@RequestParam("file") MultipartFile file) throws Exception {
 
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+
+                // Creating the directory to store file
+                String rootPath = "C:\\Users\\chigi\\Pictures\\Test";
+
+                String name = event.getName();
+                File dir = new File(rootPath + File.separator + name +".jpeg");
+//                if (!dir.exists())
+//                    dir.mkdirs();
+                // Create the file on server
+                File serverFile = new File(dir.getAbsolutePath() + File.separator);
+                BufferedOutputStream stream = new BufferedOutputStream(
+                        new FileOutputStream(serverFile));
+                stream.write(bytes);
+                stream.close();
+
+            } catch (Exception e) {
+
+            }
+        }
         ModelAndView modelAndView=new ModelAndView("home");
+
+        GeoLocService obj = new GeoLocService();
+        double lat = obj.getlat(event);
+        double lng = obj.getlong(event);
+
+        event.setLatitude((float) lat);
+        event.setLongitude((float) lng);
         eventService.addEvent(event);
 
-        String message="Event added.";
-        modelAndView.addObject("message",message);
-
-        String json = new Gson().toJson(modelAndView);
-        return json;
+        return modelAndView;
     }
 
     @RequestMapping(value = "/list")
-    public ModelAndView listOfEvent(){
+    public ModelAndView listOfEvent() throws JsonProcessingException {
         ModelAndView modelAndView=new ModelAndView("listevents");
 
         List<Event> events=eventService.getEvents();
-        modelAndView.addObject("events",events);
-//        String json = new Gson().toJson(modelAndView);
-//        return json;
+//        modelAndView.addObject("events",events);
+        ObjectMapper mapper = new ObjectMapper();
+        modelAndView.addObject("events", mapper.writeValueAsString(events));
+//        String event = new Gson().toJson(modelAndView);
+//        return event;
         return modelAndView;
     }
 
