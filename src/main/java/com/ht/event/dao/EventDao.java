@@ -9,6 +9,8 @@ import com.ht.event.model.Event;
  */
 public interface EventDao {
     public void addEvent(Event event);
+    public void indexEvents() throws Exception;
+    public List<Event> searchForEvent(String searchText) throws Exception;
     public void updateEvent(Event event);
     public Event getEvent(Integer id);
     public void deleteEvent(Integer id);

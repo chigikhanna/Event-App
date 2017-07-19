@@ -7,9 +7,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LinkController {
 
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = "/event/home")
     public ModelAndView homePage(){
         return new ModelAndView(("home"));
+    }
+
+    @RequestMapping(value = "/event/search")
+    public ModelAndView search(){
+        return new ModelAndView(("eventSearch"));
     }
 
 }
