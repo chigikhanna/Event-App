@@ -46,16 +46,6 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public void indexEvents() throws Exception{
-        eventDao.indexEvents();
-    }
-
-    @Override
-    public List<Event> searchForEvent(String searchText) throws Exception {
-        return eventDao.searchForEvent(searchText);
-    }
-
-    @Override
     public List<Event> getEvents() {
         return eventDao.getEvents();
     }

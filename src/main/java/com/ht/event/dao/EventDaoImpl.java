@@ -9,15 +9,10 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.search.FullTextSession;
-import org.hibernate.search.Search;
-import org.hibernate.search.jpa.FullTextEntityManager;
-import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.ht.event.model.Event;
 import org.springframework.transaction.annotation.Transactional;
-
 
 @Repository
 @Transactional
@@ -32,48 +27,6 @@ public class EventDaoImpl implements EventDao {
         return sessionFactory.getCurrentSession();
     }
 
-    @Override
-    public void indexEvents() throws Exception
-    {
-        try
-        {
-            Session session = sessionFactory.getCurrentSession();
-
-            FullTextSession fullTextSession = Search.getFullTextSession(session);
-            fullTextSession.createIndexer().startAndWait();
-        }
-        catch(Exception e)
-        {
-            throw e;
-        }
-    }
-
-    @Override
-    public List<Event> searchForEvent(String searchText) throws Exception
-    {
-        try
-        {
-            Session session = sessionFactory.getCurrentSession();
-
-            FullTextSession fullTextSession = Search.getFullTextSession(session);
-
-            QueryBuilder qb = fullTextSession.getSearchFactory()
-                    .buildQueryBuilder().forEntity(Event.class).get();
-            org.apache.lucene.search.Query query = qb
-                    .keyword().onFields("name", "city")
-                    .matching(searchText)
-                    .createQuery();
-
-            org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(query, Event.class); //<<--Error
-//            https://www.codeproject.com/Articles/830529/Integrating-Full-Text-Search-to-Spring-MVC-with-Hi
-            List<Event> results = hibQuery.list();
-            return results;
-        }
-        catch(Exception e)
-        {
-            throw e;
-        }
-    }
 
     @Override
     public void addEvent(Event event) {
