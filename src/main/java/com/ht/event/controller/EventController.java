@@ -29,14 +29,14 @@ public class EventController extends HttpServlet {
     @Autowired
     private GeoLocService geoLocService;
 
-    @RequestMapping(value = "/form", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public ModelAndView addEventPage() {
         ModelAndView modelAndView = new ModelAndView("addevent");
         modelAndView.addObject("event", new Event());
         return modelAndView;
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("file") MultipartFile file) throws Exception {
 
         if (!file.isEmpty()) {

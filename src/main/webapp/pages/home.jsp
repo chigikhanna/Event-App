@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="<s:url value="/resources/css/design.css"/>">
+    <link rel="stylesheet" href="<s:url value="../resources/css/design.css"/>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,57 +17,7 @@
 <body id="top" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <a href="http://www.hindustantimes.com">
-        <img class="ht-logo" src="http://www.hindustantimes.com/images/app-images/ht/sm-logo-cm.png" height="45"
-             width="45">
-    </a>
-    <a class="logo" href="<s:url value="/home"/>">events</a>
-    <!-- <a href=""><span class="glyphicon glyphicon-search"></span></a> -->
-    <!-- <span class="col-md-3 col-md-offset-3">
-        <form action="" class="search-form">
-            <div class="form-group has-feedback">
-            <label for="search" class="sr-only">Search</label>
-            <input type="text" class="form-control" name="search" id="search" placeholder="search"></input>
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-          </div>
-        </form>
-    </span> -->
-
-
-    <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-                <span class="glyphicon glyphicon-search"></span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a href="#">
-                    <form action="" class="search-form">
-                        <div class="form-group has-feedback">
-                            <label for="search" class="sr-only">Search</label>
-                            <input type="text" class="form-control" name="search" id="search"
-                                   placeholder="Search">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
-                </a></li>
-                <!-- <li class="divider"></li> -->
-                <li><a href="<s:url value="/event/list"/>">Search All</a></li>
-            </ul>
-
-        </li>
-        <li><a href="<s:url value="/event/list"/>">BROWSE EVENTS</a></li>
-
-        <li><a href="#signin" data-target="#signin" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>
-            LOG IN</a></li>
-        <li><a href="#signup" data-target="#signup" data-toggle="modal"><span class="glyphicon glyphicon-user"></span>
-            SIGN UP</a></li>
-        <li><a href="<s:url value="/event/form"/>">CREATE EVENT</a></li>
-        <li><a href="http://www.hindustantimes.com/contact-us">CONTACT US </a></li>
-    </ul>
-    </span>
-</nav>
+<jsp:include page="include/header.jsp"/>
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -79,9 +29,9 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox" style="max-height: 500px">
         <div class="item active">
-            <img src="<s:url value="/resources/img/home-1.jpg"/>" alt=width="1200" height="700">
+            <img src="<s:url value="/resources/img/home-1.jpg"/>" alt=width="1200" height="400">
             <div class="carousel-caption">
                 <h3>Event 3</h3>
                 <p>June 26,2017. New Delhi</p>
@@ -89,7 +39,7 @@
         </div>
 
         <div class="item">
-            <img src="<s:url value="/resources/img/about.jpg"/>" width="1200" height="700">
+            <img src="<s:url value="/resources/img/about.jpg"/>" width="1200" height="400">
             <div class="carousel-caption">
                 <h3>Event 1</h3>
                 <p>June 25,2017. New Delhi</p>
@@ -97,7 +47,7 @@
         </div>
 
         <div class="item">
-            <img src="<s:url value="/resources/img/home-2.jpg"/>" width="1200" height="700">
+            <img src="<s:url value="/resources/img/home-2.jpg"/>" width="1200" height="400">
             <div class="carousel-caption">
                 <h3>Event 2</h3>
                 <p>June 24,2017. New Delhi</p>
@@ -238,30 +188,8 @@
     </div>
 </div>
 
-<footer class="text-center">
-    <a class="up-arrow" href="#top" data-toggle="tooltip" title="TO TOP">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
+<jsp:include page="include/footer.jsp"/>
 
-    <div class="follow">
-        Follow Us:
-        <a href="https://www.facebook.com/hindustantimes" class="fa fa-facebook"></a>
-        <a href="https://twitter.com/htTweets" class="fa fa-twitter"></a>
-        <a href="https://plus.google.com/+hindustantimes/posts" class="fa fa-google-plus"></a>
-        <a href="https://www.instagram.com/hindustantimes/" class="fa fa-instagram"></a>
-        <a href="https://www.linkedin.com/company/hindustantimes" class="fa fa-linkedin"></a>
-        <a href="https://www.youtube.com/user/ht" class="fa fa-youtube"></a>
-    </div>
-    <br>
-    <p>Copyright &copy 2017. HT Media Limited. All rights reserved.</p>
-    <div class="footer-links">
-        <a href="http://www.htmedia.in/Sectionb14c.html?Page=Page-HTMedia-AboutUs">About Us</a>
-        <a href="http://www.hindustantimes.com/contact-us"> Contact Us</a>
-        <a href="http://www.hindustantimes.com/privacy-policy"> Privacy Policy</a>
-        <a href="http://www.hindustantimes.com/disclaimer"> Disclaimer</a>
-        <a href="http://www.shine.com/"> Jobs</a>
-    </div>
-</footer>
 <form method="POST" action="/user/add">
     <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
