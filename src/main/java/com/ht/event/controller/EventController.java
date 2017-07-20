@@ -77,8 +77,8 @@ public class EventController extends HttpServlet {
     public ModelAndView listOfEvent() throws JsonProcessingException {
         ModelAndView modelAndView = new ModelAndView("listevents");
         List<Event> events = eventService.getEvents();
-        ObjectMapper mapper = new ObjectMapper();
-        modelAndView.addObject("events", mapper.writeValueAsString(events));
+//        ObjectMapper mapper = new ObjectMapper();
+        modelAndView.addObject("events", events);
         return modelAndView;
     }
 

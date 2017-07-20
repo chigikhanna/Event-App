@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,82 +21,17 @@
 <div class="container">
     <h3 class="text-center">HT EVENTS</h3>
     <div class="row text-center">
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Sports" width="400" height="300">
-                <p><strong>EVENT 1</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
+        <c:forEach  var="event" items="${events}">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Sports" width="400" height="300">
+                    <p><strong>${event.name}</strong></p>
+                    <p>${event.date}</p>
+                    <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Art" width="400" height="300">
-                <p><strong>EVENT 2</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Music" width="400" height="300">
-                <p><strong>EVENT 3</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Dance" width="400" height="300">
-                <p><strong>EVENT 4</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Theatre" width="400" height="300">
-                <p><strong>EVENT 5</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Food & Drinks" width="400" height="300">
-                <p><strong>EVENT 6</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Food & Drinks" width="400" height="300">
-                <p><strong>EVENT 7</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Food & Drinks" width="400" height="300">
-                <p><strong>EVENT 8</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Food & Drinks" width="400" height="300">
-                <p><strong>EVENT 9</strong></p>
-                <p>Friday. 15 July, 2015</p>
-                <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-            </div>
-        </div>
+        </c:forEach>
     </div>
-    <!-- <div class="right-align">
-    <button class="btn all-events" data-target="list.html">See All</button>
-  </div> -->
 </div>
 
 
@@ -113,7 +49,6 @@
                     <p>Already have an account?
                         <button type="button" class="btn btn-default" id="signin-trigger"> Sign In</button>
                     </p>
-                    <!-- <p>Already have an account? <a href="#signin" data-target="#signin" data-toggle="modal" id="signin-trigger">Log In</a></p> -->
                 </div>
                 <div class="modal-body">
 
