@@ -1,15 +1,20 @@
 package com.ht.event.controller;
 
+import com.ht.event.service.EventService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LinkController {
+    @Autowired
+    EventService eventService;
 
     @RequestMapping(value = "/home")
-    public ModelAndView homePage(){
-        return new ModelAndView(("home"));
+    public ModelAndView homePage() {
+        ModelAndView modelAndView = new ModelAndView("home");
+        modelAndView.addObject("events", eventService.getEvents());
+        return modelAndView;
     }
-
 }

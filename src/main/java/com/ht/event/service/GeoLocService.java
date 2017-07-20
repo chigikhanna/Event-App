@@ -4,26 +4,14 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.model.GeocodingResult;
 import com.ht.event.model.Event;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GeoLocService {
-    public double getlat(Event event) throws Exception {
 
-        String location = event.getAddress() + " " + event.getCity() + " " + event.getCountry() + " " + event.getPincode();
+    public double[] getGeoLocations(String location) throws Exception {
         GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyAB8O9iXUkHDvWsPnJ8AM-GJ5KcIobOMxU");
         GeocodingResult[] results = GeocodingApi.geocode(context, location).await();
-        double lat = results[0].geometry.location.lat;
-
-        return lat;
+        return new double[]{results[0].geometry.location.lat, results[0].geometry.location.lng};
     }
-    public double getlong(Event event) throws Exception {
-
-        String location = event.getAddress() + " " + event.getCity() + " " + event.getCountry() + " " + event.getPincode();
-        GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyAB8O9iXUkHDvWsPnJ8AM-GJ5KcIobOMxU");
-        GeocodingResult[] results = GeocodingApi.geocode(context, location).await();
-        double lng = results[0].geometry.location.lng;
-
-        return lng;
-    }
-
-
 }

@@ -1,16 +1,22 @@
 package com.ht.event.dao;
 
-import java.util.List;
-import java.util.Set;
 import com.ht.event.model.Event;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by tanvigupta on 28/06/17.
  */
 public interface EventDao {
-    public void addEvent(Event event);
-    public void updateEvent(Event event);
-    public Event getEvent(Integer id);
-    public void deleteEvent(Integer id);
-    public List<Event> getEvents();
+    void addEvent(Event event);
+
+    void updateEvent(Event event);
+
+    Event getEvent(Integer id);
+
+    void deleteEvent(Integer id);
+
+    List<Event> getEvents();
 }

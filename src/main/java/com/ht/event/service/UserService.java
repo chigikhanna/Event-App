@@ -5,9 +5,13 @@ import java.util.List;
 import com.ht.event.model.User;
 
 public interface UserService {
-    public void addUser(User user);
-    public void updateUser(User user);
-    public User getUser(Integer id);
-    public void deleteUser(Integer id);
-    public List<User> getUsers();
+    void addUser(User user);
+
+    void updateUser(User user);
+
+    User getUser(Integer id);
+
+    void deleteUser(Integer id);
+
+    List<User> getUsers();
 }

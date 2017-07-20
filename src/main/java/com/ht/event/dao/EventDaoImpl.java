@@ -4,15 +4,15 @@ package com.ht.event.dao;
  * Created by tanvigupta on 28/06/17.
  */
 
-import java.util.List;
+import com.ht.event.model.Event;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.ht.event.model.Event;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 @Transactional
@@ -22,8 +22,7 @@ public class EventDaoImpl implements EventDao {
     private SessionFactory sessionFactory;
 
 
-    private Session getCurrentSession(){
-
+    private Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
 
@@ -35,7 +34,7 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public void updateEvent(Event event) {
-        Event eventToUpdate=getEvent(event.getId());
+        Event eventToUpdate = getEvent(event.getId());
         eventToUpdate.setId(event.getId());
         eventToUpdate.setName(event.getName());
         eventToUpdate.setDescription(event.getDescription());
@@ -56,14 +55,13 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public Event getEvent(Integer id) {
-        Event event=(Event) getCurrentSession().get(Event.class, id);
-        return event;
+        return (Event) getCurrentSession().get(Event.class, id);
     }
 
     @Override
     public void deleteEvent(Integer id) {
-        Event event=getEvent(id);
-        if(event!=null)
+        Event event = getEvent(id);
+        if (event != null)
             getCurrentSession().delete(event);
     }
 

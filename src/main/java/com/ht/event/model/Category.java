@@ -1,5 +1,8 @@
 package com.ht.event.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -9,6 +12,8 @@ import java.util.Set;
  * Created by tanvigupta on 30-Jun-17.
  */
 
+@Getter
+@Setter
 @Entity
 @Table(name = "category")
 public class Category implements Serializable {
@@ -17,19 +22,4 @@ public class Category implements Serializable {
 
     private Integer id;
     private String name;
-
-    public String getName() {
-        return name;
-    }
-    public Integer getId() {
-        return id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
 }

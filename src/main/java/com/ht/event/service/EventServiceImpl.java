@@ -1,21 +1,17 @@
 package com.ht.event.service;
 
+import com.ht.event.dao.EventDao;
 import com.ht.event.model.Event;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
  * Created by tanvigupta on 29/06/17.
  */
 
-import com.ht.event.model.Event;
-import com.ht.event.dao.EventDao;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
-
-@Component
 @Service
 @Transactional
 public class EventServiceImpl implements EventService {

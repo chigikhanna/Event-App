@@ -14,13 +14,14 @@ import java.util.List;
  */
 @Repository
 public class CategoryDaoImpl implements CategoryDao {
+
     @Autowired
     private SessionFactory sessionFactory;
 
-    private Session getCurrentSession(){
-
+    private Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
+
     @Override
     public void addCategory(Category category) {
         getCurrentSession().save(category);
@@ -28,15 +29,14 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public Category getCategory(Integer id) {
-        Category category=(Category) getCurrentSession().get(Category.class, id);
-        return category;
+        return (Category) getCurrentSession().get(Category.class, id);
     }
 
 
     @Override
     public void deleteCategory(Integer id) {
-        Category category=getCategory(id);
-        if(category!=null)
+        Category category = getCategory(id);
+        if (category != null)
             getCurrentSession().delete(category);
     }
 

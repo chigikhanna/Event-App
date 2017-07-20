@@ -2,7 +2,6 @@ package com.ht.event.service;
 
 import com.ht.event.dao.CategoryDao;
 import com.ht.event.model.Category;
-import com.ht.event.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +30,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteCategory(Integer id) {
-
         categoryDao.deleteCategory(id);
     }
 
