@@ -87,7 +87,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     public UrlBasedViewResolver setupViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setPrefix("/pages/");
-        resolver.setSuffix(".jsp"); //needs to be empty for html pages
+        resolver.setSuffix(".jsp");
         resolver.setViewClass(JstlView.class);
         return resolver;
     }

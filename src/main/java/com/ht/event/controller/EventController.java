@@ -70,7 +70,7 @@ public class EventController extends HttpServlet {
         event.setLatitude((float) geoLocations[0]);
         event.setLongitude((float) geoLocations[1]);
         eventService.addEvent(event);
-        return new ModelAndView("redirect:home");
+        return new ModelAndView("home");
     }
 
     @RequestMapping(value = "/list")
