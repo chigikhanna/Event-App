@@ -40,7 +40,7 @@ public class Event implements Serializable {
     private String country;
 
     private String pincode;
-
+    private String imgURL;
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
 

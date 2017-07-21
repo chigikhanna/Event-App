@@ -24,7 +24,7 @@
         <c:forEach  var="event" items="${events}">
             <div class="col-sm-4">
                 <div class="thumbnail">
-                    <img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Sports" width="400" height="300">
+                    <img src="<s:url value="/resources/img/${event.name}.jpeg"/>" alt="Sports" width="400" height="300">
                     <p><strong>${event.name}</strong></p>
                     <p>${event.date}</p>
                     <button class="btn" data-toggle="modal" data-target="#myModal">More</button>

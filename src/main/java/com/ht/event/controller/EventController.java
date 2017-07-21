@@ -17,6 +17,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Controller
@@ -44,10 +45,10 @@ public class EventController extends HttpServlet {
                 byte[] bytes = file.getBytes();
 
                 // Creating the directory to store file
-                String rootPath = "C:\\Users\\chigi\\Pictures\\Test";
 
-                String name = event.getName();
-                File dir = new File(rootPath + File.separator + name + ".jpeg");
+                String rootPath = System.getProperty("catalina.home") + "\\img";
+                String uuid = UUID.randomUUID().toString();
+                File dir = new File(rootPath + File.separator + uuid + ".jpeg");
 //                if (!dir.exists())
 //                    dir.mkdirs();
                 // Create the file on server
@@ -56,6 +57,7 @@ public class EventController extends HttpServlet {
                         new FileOutputStream(serverFile));
                 stream.write(bytes);
                 stream.close();
+                event.setImgURL(uuid + ".jpeg");
 
             } catch (Exception e) {
                 log.error(e.getMessage(), e);
@@ -66,7 +68,6 @@ public class EventController extends HttpServlet {
         String location = event.getAddress() + " " + event.getCity() + " " + event.getCountry() + " " + event.getPincode();
 
         double[] geoLocations = geoLocService.getGeoLocations(location);
-
         event.setLatitude((float) geoLocations[0]);
         event.setLongitude((float) geoLocations[1]);
         eventService.addEvent(event);
