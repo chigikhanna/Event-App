@@ -21,16 +21,17 @@
 <div class="container">
     <h3 class="text-center">HT EVENTS</h3>
     <div class="row text-center">
-        <c:forEach  var="event" items="${events}">
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="<s:url value="/resources/img/${event.name}.jpeg"/>" alt="Sports" width="400" height="300">
-                    <p><strong>${event.name}</strong></p>
-                    <p>${event.date}</p>
-                    <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
-                </div>
-            </div>
-        </c:forEach>
+        <%--<c:forEach  var="event" items="${events}">--%>
+            <%--<div class="col-sm-4">--%>
+                <%--<div class="thumbnail">--%>
+                    <%--<img src="<s:url value="/resources/img/${event.name}.jpeg"/>" alt="Sports" width="400" height="300">--%>
+                    <%--<p><strong>${event.name}</strong></p>--%>
+                    <%--<p>${event.date}</p>--%>
+                    <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</c:forEach>--%>
+            <jsp:include page="include/event-listings.jsp"/>
     </div>
 </div>
 
@@ -125,6 +126,11 @@
         $('#signin').modal('show');
     });
 
+
+    $.ajax({
+        type : "POST",
+        url : "event/list",
+    });
 </script>
 
 </body>

@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServlet;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URL;
 import java.util.List;
 import java.util.UUID;
 
@@ -75,11 +77,16 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/list")
-    public ModelAndView listOfEvent() throws JsonProcessingException {
-        ModelAndView modelAndView = new ModelAndView("listevents");
+    public ModelAndView listOfEvent(){
+        ModelAndView modelAndView = new ModelAndView("redirect:/event/end");
         List<Event> events = eventService.getEvents();
-//        ObjectMapper mapper = new ObjectMapper();
         modelAndView.addObject("events", events);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/end")
+    public ModelAndView endpoint(){
+        ModelAndView modelAndView = new ModelAndView("");
         return modelAndView;
     }
 
