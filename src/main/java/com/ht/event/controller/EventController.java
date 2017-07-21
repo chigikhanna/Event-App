@@ -78,15 +78,15 @@ public class EventController extends HttpServlet {
 
     @RequestMapping(value = "/list")
     public ModelAndView listOfEvent(){
-        ModelAndView modelAndView = new ModelAndView("redirect:/event/end");
+        ModelAndView modelAndView = new ModelAndView("listevents");
         List<Event> events = eventService.getEvents();
         modelAndView.addObject("events", events);
         return modelAndView;
     }
 
-    @RequestMapping(value = "/end")
+    @RequestMapping(value = "/search")
     public ModelAndView endpoint(){
-        ModelAndView modelAndView = new ModelAndView("");
+        ModelAndView modelAndView = new ModelAndView("include/event-listings");
         return modelAndView;
     }
 

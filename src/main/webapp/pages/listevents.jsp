@@ -127,9 +127,20 @@
     });
 
 
-    $.ajax({
-        type : "POST",
-        url : "event/list",
+//    $.ajax({
+//        type : "POST",
+//        url : "event/search",
+//    });
+
+    $(window).scroll(function(){
+        if ($(window).scrollTop() == $(document).height()-$(window).height()){
+            console.log("reached");
+            $.ajax({
+                url: "event/search",
+                success: function (data) { $('body').append(data); },
+//                dataType: 'html'
+            });
+        }
     });
 </script>
 
