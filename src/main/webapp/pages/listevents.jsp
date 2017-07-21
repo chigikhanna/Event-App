@@ -136,7 +136,8 @@
         if ($(window).scrollTop() == $(document).height()-$(window).height()){
             console.log("reached");
             $.ajax({
-                url: "event/search",
+                type : "POST",
+                url : "${pageContext.request.contextPath}/event/search",
                 success: function (data) { $('body').append(data); },
 //                dataType: 'html'
             });
