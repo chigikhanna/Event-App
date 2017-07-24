@@ -5,9 +5,11 @@ package com.ht.event.dao;
  */
 
 import com.ht.event.model.Event;
+import com.ht.event.model.EventDTO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -65,9 +67,15 @@ public class EventDaoImpl implements EventDao {
             getCurrentSession().delete(event);
     }
 
+    int start = 0;
+    int size = 5;
     @Override
     public List<Event> getEvents() {
         Criteria criteria = getCurrentSession().createCriteria(Event.class);
+        criteria.setFirstResult(start * size);
+        criteria.setMaxResults(size);
+//        criteria.setFetchSize(5);
+        start++;
         return criteria.list();
     }
 }
