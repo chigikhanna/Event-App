@@ -69,7 +69,7 @@ public class EventDaoImpl implements EventDao {
     @Override
     public List<Event> getEvents(EventDTO eventDTO) {
         Criteria criteria = getCurrentSession().createCriteria(Event.class);
-        criteria.setFirstResult(eventDTO.getStart());
+        criteria.setFirstResult(eventDTO.getStart() * eventDTO.getSize());
         criteria.setMaxResults(eventDTO.getSize());
 //        criteria.setFetchSize(5);
         return criteria.list();
