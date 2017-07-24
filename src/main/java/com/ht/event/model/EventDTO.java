@@ -10,32 +10,7 @@ import java.util.Date;
 @Setter
 public class EventDTO implements Serializable {
 
-    private Integer id;
-
-    private String name;
-
-    private String description;
-
-    private Date date;
-
-    private String day;
-
-    private String duration;
-
-    private String address;
-
-    private String city;
-
-    private String country;
-
-    private String pincode;
-
-    private String imgURL;
-
-    private float latitude;
-
-    private float longitude;
-
-    private float fees;
+   private int size;
+   private int start;
 
 }

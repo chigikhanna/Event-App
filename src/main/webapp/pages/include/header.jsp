@@ -1,10 +1,12 @@
 <%@ taglib prefix="s" uri="http://java.sun.com/jstl/core" %>
 <nav class="navbar navbar-default navbar-fixed-top">
-    <a href="http://www.hindustantimes.com">
-        <img class="ht-logo" src="http://www.hindustantimes.com/images/app-images/ht/sm-logo-cm.png" height="45"
-             width="45">
-    </a>
-    <a class="logo" href="<s:url value="/home"/>">events</a>
+    <span style="display: inline">
+        <a href="http://www.hindustantimes.com" style="margin-left: 35px">
+            <img class="ht-logo" src="http://www.hindustantimes.com/images/app-images/ht/sm-logo-cm.png" height="30"
+                 width="30">
+         </a>
+        <a class="logo" href="<s:url value="/home"/>">events</a>
+    </span>
 
     <ul class="nav navbar-nav navbar-right">
         <li class="nav-item dropdown">

@@ -3,6 +3,7 @@ package com.ht.event.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ht.event.model.Event;
+import com.ht.event.model.EventDTO;
 import com.ht.event.service.EventService;
 import com.ht.event.service.GeoLocService;
 import lombok.extern.slf4j.Slf4j;
@@ -77,16 +78,23 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/list")
-    public ModelAndView listOfEvent(){
+    public ModelAndView listOfEvent() {
         ModelAndView modelAndView = new ModelAndView("listevents");
-        List<Event> events = eventService.getEvents();
+        EventDTO eventDTO = new EventDTO();
+        eventDTO.setSize(5);
+        eventDTO.setStart(0);
+        List<Event> events = eventService.getEvents(eventDTO);
         modelAndView.addObject("events", events);
         return modelAndView;
     }
 
     @RequestMapping(value = "/search")
-    public ModelAndView endpoint(){
+    public ModelAndView endpoint(@RequestParam("size") String size, @RequestParam("page") String page) {
         ModelAndView modelAndView = new ModelAndView("include/event-listings");
+        EventDTO eventDTO = new EventDTO();
+        eventDTO.setSize(Integer.parseInt(size));
+        eventDTO.setStart(Integer.parseInt(page));
+        modelAndView.addObject("events", eventService.getEvents(eventDTO));
         return modelAndView;
     }
 

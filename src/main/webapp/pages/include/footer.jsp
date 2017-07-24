@@ -1,3 +1,5 @@
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+
 <footer class="text-center">
     <a class="up-arrow" href="#top" data-toggle="tooltip" title="TO TOP">
         <span class="glyphicon glyphicon-chevron-up"></span>
@@ -23,3 +25,7 @@
   <a href="http://www.shine.com/"> Jobs</a>
 </span></p>
 </footer>
+
+<script>
+    baseURL = "<%=request.getContextPath()%>";
+</script>

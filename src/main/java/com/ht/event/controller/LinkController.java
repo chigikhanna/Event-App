@@ -1,5 +1,6 @@
 package com.ht.event.controller;
 
+import com.ht.event.model.EventDTO;
 import com.ht.event.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,8 @@ public class LinkController {
     @RequestMapping(value = "/home")
     public ModelAndView homePage() {
         ModelAndView modelAndView = new ModelAndView("home");
-        modelAndView.addObject("events", eventService.getEvents());
+        EventDTO eventDTO = new EventDTO();
+        modelAndView.addObject("events", eventService.getEvents(eventDTO));
         return modelAndView;
     }
 }

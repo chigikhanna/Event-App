@@ -1,6 +1,7 @@
 package com.ht.event.service;
 
 import com.ht.event.model.Event;
+import com.ht.event.model.EventDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,5 +16,5 @@ public interface EventService {
 
     void deleteEvent(Integer id);
 
-    List<Event> getEvents();
+    List<Event> getEvents(EventDTO eventDTO);
 }

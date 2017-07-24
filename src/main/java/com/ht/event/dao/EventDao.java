@@ -1,8 +1,7 @@
 package com.ht.event.dao;
 
 import com.ht.event.model.Event;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
+import com.ht.event.model.EventDTO;
 
 import java.util.List;
 
@@ -18,5 +17,5 @@ public interface EventDao {
 
     void deleteEvent(Integer id);
 
-    List<Event> getEvents();
+    List<Event> getEvents(EventDTO eventDTO);
 }

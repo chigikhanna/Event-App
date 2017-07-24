@@ -20,8 +20,8 @@
 
 <div class="container">
     <h3 class="text-center">HT EVENTS</h3>
-    <div class="row text-center">
-            <jsp:include page="include/event-listings.jsp"/>
+    <div class="row text-center event-listing">
+        <jsp:include page="include/event-listings.jsp"/>
     </div>
 </div>
 
@@ -106,32 +106,50 @@
 </div>
 
 <script>
-    $("#signup-trigger").click(function () {
-        $('#signin').modal('hide');
-        $('#signup').modal('show');
+
+    $(document).ready(function () {
+        var page = 0;
+
+        $("#signup-trigger").click(function () {
+            $('#signin').modal('hide');
+            $('#signup').modal('show');
+        });
+
+        $("#signin-trigger").click(function () {
+            $('#signup').modal('hide');
+            $('#signin').modal('show');
+        });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                page++;
+                $.ajax({
+                    url: baseURL + "/event/search?page=" + page + "&size=5",
+                    success: function (data) {
+                        $('.event-listing').append(data);
+                    },
+                    dataType: 'html'
+                });
+            }
+        });
     });
 
-    $("#signin-trigger").click(function () {
-        $('#signup').modal('hide');
-        $('#signin').modal('show');
-    });
 
-
-//    $.ajax({
-//        type : "POST",
-//        url : "event/search",
-//    });
+    //    $.ajax({
+    //        type : "POST",
+    //        url : "event/search",
+    //    });
 
     <%--$(window).scroll(function(){--%>
-        <%--if ($(window).scrollTop() == $(document).height()-$(window).height()){--%>
-            <%--console.log("reached");--%>
-            <%--$.ajax({--%>
-                <%--type : "POST",--%>
-                <%--url : "${pageContext.request.contextPath}/event/search",--%>
-                <%--success: function (data) { $('body').append(data); },--%>
-<%--//                dataType: 'html'--%>
-            <%--});--%>
-        <%--}--%>
+    <%--if ($(window).scrollTop() == $(document).height()-$(window).height()){--%>
+    <%--console.log("reached");--%>
+    <%--$.ajax({--%>
+    <%--type : "POST",--%>
+    <%--url : "${pageContext.request.contextPath}/event/search",--%>
+    <%--success: function (data) { $('body').append(data); },--%>
+    <%--//                dataType: 'html'--%>
+    <%--});--%>
+    <%--}--%>
     <%--});--%>
 </script>
 

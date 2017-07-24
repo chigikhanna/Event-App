@@ -2,6 +2,7 @@ package com.ht.event.service;
 
 import com.ht.event.dao.EventDao;
 import com.ht.event.model.Event;
+import com.ht.event.model.EventDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,7 +43,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<Event> getEvents() {
-        return eventDao.getEvents();
+    public List<Event> getEvents(EventDTO eventDTO) {
+        return eventDao.getEvents(eventDTO);
     }
 }

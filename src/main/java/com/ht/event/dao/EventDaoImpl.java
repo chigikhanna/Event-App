@@ -9,7 +9,6 @@ import com.ht.event.model.EventDTO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,10 +67,10 @@ public class EventDaoImpl implements EventDao {
     }
 
     @Override
-    public List<Event> getEvents() {
-        Criteria criteria = getCurrentSession().createCriteria(EventDTO.class);
-        criteria.setFirstResult(0);
-        criteria.setMaxResults(5);
+    public List<Event> getEvents(EventDTO eventDTO) {
+        Criteria criteria = getCurrentSession().createCriteria(Event.class);
+        criteria.setFirstResult(eventDTO.getStart());
+        criteria.setMaxResults(eventDTO.getSize());
 //        criteria.setFetchSize(5);
         return criteria.list();
     }
