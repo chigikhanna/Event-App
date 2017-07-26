@@ -2,6 +2,7 @@ package com.ht.event.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ht.event.model.Category;
 import com.ht.event.model.Event;
 import com.ht.event.model.EventDTO;
 import com.ht.event.service.EventService;
@@ -19,7 +20,9 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Slf4j
@@ -41,7 +44,7 @@ public class EventController extends HttpServlet {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("file") MultipartFile file) throws Exception {
+    public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("category") Set<String> category , @RequestParam("file") MultipartFile file) throws Exception {
 
         if (!file.isEmpty()) {
             try {
@@ -73,6 +76,9 @@ public class EventController extends HttpServlet {
         double[] geoLocations = geoLocService.getGeoLocations(location);
         event.setLatitude((float) geoLocations[0]);
         event.setLongitude((float) geoLocations[1]);
+
+
+//        event.setCategory(category);
         eventService.addEvent(event);
         return new ModelAndView("home");
     }

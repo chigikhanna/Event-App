@@ -133,24 +133,6 @@
             }
         });
     });
-
-
-    //    $.ajax({
-    //        type : "POST",
-    //        url : "event/search",
-    //    });
-
-    <%--$(window).scroll(function(){--%>
-    <%--if ($(window).scrollTop() == $(document).height()-$(window).height()){--%>
-    <%--console.log("reached");--%>
-    <%--$.ajax({--%>
-    <%--type : "POST",--%>
-    <%--url : "${pageContext.request.contextPath}/event/search",--%>
-    <%--success: function (data) { $('body').append(data); },--%>
-    <%--//                dataType: 'html'--%>
-    <%--});--%>
-    <%--}--%>
-    <%--});--%>
 </script>
 
 </body>

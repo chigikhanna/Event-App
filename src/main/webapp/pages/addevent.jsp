@@ -96,25 +96,25 @@
             </div>
         </div>
 
-        <%--<div class="form-group">--%>
-        <%--<label class="control-label col-sm-2">Category:</label>--%>
-        <%--<div class="col-sm-10">--%>
-        <%--<form:select id="category" path="category" multiple="true">--%>
-        <%--<form:option value="music">Music</form:option>--%>
-        <%--<form:option value="dance">Dance</form:option>--%>
-        <%--<form:option value="theatre">Theatre</form:option>--%>
-        <%--<form:option value="business">Business</form:option>--%>
-        <%--<form:option value="art">Art</form:option>--%>
-        <%--<form:option value="educational">Educational</form:option>--%>
-        <%--<form:option value="networking">Networking</form:option>--%>
-        <%--<form:option value="sports">Sports</form:option>--%>
-        <%--</form:select>--%>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Category:</label>
+            <div class="col-sm-10">
+                <select id="category" name="category" multiple>
+                    <option value="music">Music</option>
+                    <option value="dance">Dance</option>
+                    <option value="theatre">Theatre</option>
+                    <option value="business">Business</option>
+                    <option value="art">Art</option>
+                    <option value="educational">Educational</option>
+                    <option value="networking">Networking</option>
+                    <option value="sports">Sports</option>
+                </select>
 
-        <%--<span class="help-block">--%>
-        <%--Select 1 or more categories the event may belong to.--%>
-        <%--</span>--%>
-        <%--</div>--%>
-        <%--</div>--%>
+                <span class="help-block">
+            Select 1 or more categories the event may belong to.
+        </span>
+            </div>
+        </div>
 
         <div class="form-group">
             <label class="control-label col-sm-2" for="description">Description:</label>
