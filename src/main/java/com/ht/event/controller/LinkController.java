@@ -1,6 +1,7 @@
 package com.ht.event.controller;
 
 import com.ht.event.model.EventDTO;
+import com.ht.event.service.CategoryService;
 import com.ht.event.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

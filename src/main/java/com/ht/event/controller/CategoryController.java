@@ -27,16 +27,12 @@ public class CategoryController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addingCategory(@ModelAttribute Category category) {
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ModelAndView addingCategory(@ModelAttribute Category category) {
 
         ModelAndView modelAndView = new ModelAndView("home");
         categoryService.addCategory(category);
-
-        String message = "Category added.";
-        modelAndView.addObject("message", message);
-
-        return new Gson().toJson(modelAndView);
+        return modelAndView;
     }
 
 
