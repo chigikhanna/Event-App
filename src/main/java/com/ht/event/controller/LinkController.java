@@ -5,6 +5,7 @@ import com.ht.event.service.CategoryService;
 import com.ht.event.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +19,12 @@ public class LinkController {
         ModelAndView modelAndView = new ModelAndView("home");
         EventDTO eventDTO = new EventDTO();
         modelAndView.addObject("events", eventService.getEvents(eventDTO));
+        return modelAndView;
+    }
+    @RequestMapping(value = "/event/details{id}")
+    public ModelAndView showDetails(@PathVariable String id){
+        ModelAndView modelAndView = new ModelAndView("details");
+        modelAndView.addObject("events",eventService.getEvent(Integer.parseInt(id)));
         return modelAndView;
     }
 }
