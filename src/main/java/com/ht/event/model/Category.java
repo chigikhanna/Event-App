@@ -22,4 +22,7 @@ public class Category implements Serializable {
 
     private Integer id;
     private String name;
+
+    @ManyToMany(mappedBy="category")
+    private Set<Event> events = new HashSet<Event>();
 }

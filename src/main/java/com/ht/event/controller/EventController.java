@@ -76,15 +76,11 @@ public class EventController extends HttpServlet {
             }
         }
 
-
         String location = event.getAddress() + " " + event.getCity() + " " + event.getCountry() + " " + event.getPincode();
 
         double[] geoLocations = geoLocService.getGeoLocations(location);
         event.setLatitude((float) geoLocations[0]);
         event.setLongitude((float) geoLocations[1]);
-
-
-//        event.setCategory(category);
         eventService.addEvent(event);
         return new ModelAndView("home");
     }

@@ -101,19 +101,12 @@
         <div class="form-group">
             <label class="control-label col-sm-2">Category:</label>
             <div class="col-sm-10">
-                <select id="category" name="category" multiple>
-                    <%--<option value="music">Music</option>--%>
-                    <%--<option value="dance">Dance</option>--%>
-                    <%--<option value="theatre">Theatre</option>--%>
-                    <%--<option value="business">Business</option>--%>
-                    <%--<option value="art">Art</option>--%>
-                    <%--<option value="educational">Educational</option>--%>
-                    <%--<option value="networking">Networking</option>--%>
-                    <%--<option value="sports">Sports</option>--%>
+                <form:select path="category" id="category" name="category" multiple="true">
                     <c:forEach items="${categories}" var="category">
                         <option value="${category.name}">${category.name}</option>
                     </c:forEach>
-                </select>
+                </form:select>
+                <%--<form:select path="category" multiple="true" items="${categories}" itemLabel="name" itemValue="id"/>--%>
 
                 <span class="help-block">
                     <a href="<s:url value="/category/add"/>">Add Category</a><br>
