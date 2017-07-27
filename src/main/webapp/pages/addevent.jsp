@@ -128,7 +128,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="fees">Registration Fee <span class="fa fa-rupee"></span></label>
             <div class="col-sm-10">
-                <input type="text" path="fees" class="form-control" id="fees" placeholder="0.0"/>
+                <form:input type="text" path="fees" class="form-control" id="fees" placeholder="0.0"/>
             </div>
         </div>
 
