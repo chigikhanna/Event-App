@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Ht events</title>
@@ -15,11 +17,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="<s:url value="/resources/css/design.css"/>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -38,14 +39,14 @@
             <div class="w3-card-2 w3-round w3-white">
                 <div class="w3-container">
                     <!-- <h4 class="w3-center">My Profile</h4> -->
-                    <p class="w3-center"><img src="img/home-1.jpg" style="margin-top:20px;height:300px;width:300px" alt="Avatar"></p>
+                    <p class="w3-center"><img src="<s:url value="/resources/img/home-1.jpg"/>" style="margin-top:20px;height:300px;width:300px" alt="Avatar"></p>
                     <hr>
                     <p class="left-header"><i class="fa fa-fw fa-calendar w3-margin-right"></i>DATE AND TIME</p>
                     <p class="w3-margin-right"> ${events.day}, ${events.date}</p>
                     <a href=""><i class="w3-margin-right"></i>Add to calender</a><br><br>
                     <p class="left-header"><i class="fa fa-fw fa-map-marker w3-margin-right"></i>LOCATION</p>
                     <p class="w3-margin-right">
-                        ${events.address}<br> ${events.city}<br> ${events.country}, ${events.pin}</p>
+                        ${events.address}<br> ${events.city}<br> ${events.country}, ${events.pincode}</p>
                     <a href=""><i class="w3-margin-right"></i>View on map</a><br><br>
 
                 </div>
