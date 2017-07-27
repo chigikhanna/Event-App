@@ -101,11 +101,11 @@
         <div class="form-group">
             <label class="control-label col-sm-2">Category:</label>
             <div class="col-sm-10">
-                <form:select path="category" id="category" name="category" multiple="true">
+                <select id="category" name="category" multiple="true">     <%--tried form path didn't work--%>
                     <c:forEach items="${categories}" var="category">
-                        <option value="${category.name}">${category.name}</option>
+                        <option value="${category.id}">${category.name}</option>
                     </c:forEach>
-                </form:select>
+                </select>
                 <%--<form:select path="category" multiple="true" items="${categories}" itemLabel="name" itemValue="id"/>--%>
 
                 <span class="help-block">

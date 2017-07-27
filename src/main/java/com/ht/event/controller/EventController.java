@@ -10,13 +10,18 @@ import com.ht.event.service.EventService;
 import com.ht.event.service.GeoLocService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.WebParam;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import java.beans.PropertyEditorSupport;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -49,8 +54,19 @@ public class EventController extends HttpServlet {
         return modelAndView;
     }
 
+//    @InitBinder
+//    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
+//        binder.registerCustomEditor(Category.class, "categories", new PropertyEditorSupport() {
+//            @Override
+//            public void setAsText(String text) {
+//                Category c = categoryService.getCategory(Integer.parseInt(text));
+//                setValue(c);
+//            }
+//        });
+//    }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("file") MultipartFile file) throws Exception {
+    public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("category") List<String> catID, @RequestParam("file") MultipartFile file) throws Exception {
 
         if (!file.isEmpty()) {
             try {
@@ -81,6 +97,14 @@ public class EventController extends HttpServlet {
         double[] geoLocations = geoLocService.getGeoLocations(location);
         event.setLatitude((float) geoLocations[0]);
         event.setLongitude((float) geoLocations[1]);
+
+        Set<Category> cat = new HashSet<Category>();
+        for (String items:catID) {
+            Category c = categoryService.getCategory(Integer.parseInt(items));
+            cat.add(c);
+        }
+        event.setCategory(cat);
+
         eventService.addEvent(event);
         return new ModelAndView("home");
     }
