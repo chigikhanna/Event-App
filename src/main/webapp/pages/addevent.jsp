@@ -101,7 +101,7 @@
         <div class="form-group">
             <label class="control-label col-sm-2">Category:</label>
             <div class="col-sm-10">
-                <select id="category" name="category" multiple="true">     <%--tried form path didn't work--%>
+                <select id="category" name="categorySelect" multiple="true">     <%--tried form path didn't work--%>
                     <c:forEach items="${categories}" var="category">
                         <option value="${category.id}">${category.name}</option>
                     </c:forEach>
