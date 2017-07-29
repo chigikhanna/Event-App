@@ -2,10 +2,14 @@ package com.ht.event.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-//import org.hibernate.search.annotations.*;
-//import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.*;
@@ -14,6 +18,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
+@Indexed
 @Entity
 @Table(name = "event")
 public class Event implements Serializable {
@@ -21,7 +26,7 @@ public class Event implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    //    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     private String name;
 
     private String description;
@@ -34,7 +39,6 @@ public class Event implements Serializable {
     //    private Time time;
     private String address;
 
-    //    @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String city;
 
     private String country;

@@ -26,10 +26,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Slf4j
 @Controller
@@ -53,17 +50,6 @@ public class EventController extends HttpServlet {
         modelAndView.addObject("categories", categoryService.getCategories());
         return modelAndView;
     }
-
-//    @InitBinder
-//    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
-//        binder.registerCustomEditor(Category.class, "categories", new PropertyEditorSupport() {
-//            @Override
-//            public void setAsText(String text) {
-//                Category c = categoryService.getCategory(Integer.parseInt(text));
-//                setValue(c);
-//            }
-//        });
-//    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("categorySelect") List<String> catID, @RequestParam("file") MultipartFile file) throws Exception {
@@ -156,6 +142,24 @@ public class EventController extends HttpServlet {
         ModelAndView modelAndView = new ModelAndView("home");
         eventService.deleteEvent(Integer.parseInt(id));
         modelAndView.addObject("message", "Successfully deleted.");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    public ModelAndView search(@RequestParam("search") String searchText) throws Exception  {
+        List<Event> allFound = eventService.searchForEvent(searchText);
+        List<Event> EventModels = new ArrayList<Event>();
+
+        for (Event e : allFound)
+        {
+            Event em = new Event();
+            em.setName(e.getName());
+
+            EventModels.add(em);
+        }
+
+        ModelAndView modelAndView = new ModelAndView("result");
+        modelAndView.addObject("foundevents", EventModels);
         return modelAndView;
     }
 }
