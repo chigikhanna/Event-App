@@ -1,6 +1,5 @@
 package com.ht.event.controller;
 
-import com.google.gson.Gson;
 import com.ht.event.model.Category;
 import com.ht.event.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class CategoryController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView addingCategory(@ModelAttribute Category category) {
 
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("redirect:home");
         categoryService.addCategory(category);
         return modelAndView;
     }
@@ -50,7 +49,7 @@ public class CategoryController {
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteCategory(@PathVariable String id) {
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("redirect:home");
         categoryService.deleteCategory(Integer.parseInt(id));
         String message = "Successfully deleted.";
         modelAndView.addObject("message", message);

@@ -72,12 +72,12 @@
         <div class="form-group">
             <label class="control-label col-sm-2" for="category">Category:</label>
             <div class="col-sm-10">
-                    <%--<form:input type="text" path="category" class="form-control" id="category"/>--%>
-                    <%--<form:checkbox path="category" value="Music"/>Music--%>
-                    <%--<form:checkbox path="category" value="Dance"/>Dance--%>
-                    <%--<form:checkbox path="category" value="Drama"/>Drama--%>
-                    <%--<form:checkbox path="category" value="Food"/>Food--%>
-                    <%--<form:checkbox path="category" value="Kids"/>Kids--%>
+                    <%--<form:input type="text" path="categories" class="form-control" id="categories"/>--%>
+                    <%--<form:checkbox path="categories" value="Music"/>Music--%>
+                    <%--<form:checkbox path="categories" value="Dance"/>Dance--%>
+                    <%--<form:checkbox path="categories" value="Drama"/>Drama--%>
+                    <%--<form:checkbox path="categories" value="Food"/>Food--%>
+                    <%--<form:checkbox path="categories" value="Kids"/>Kids--%>
             </div>
         </div>
         <div class="form-group">

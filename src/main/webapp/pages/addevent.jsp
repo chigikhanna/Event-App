@@ -101,15 +101,15 @@
         <div class="form-group">
             <label class="control-label col-sm-2">Category:</label>
             <div class="col-sm-10">
-                <select id="category" name="categorySelect" multiple="true">     <%--tried form path didn't work--%>
+                <select id="categories" name="categorySelect" multiple="true">     <%--tried form path didn't work--%>
                     <c:forEach items="${categories}" var="category">
                         <option value="${category.id}">${category.name}</option>
                     </c:forEach>
                 </select>
-                <%--<form:select path="category" multiple="true" items="${categories}" itemLabel="name" itemValue="id"/>--%>
+                <%--<form:select path="categories" multiple="true" items="${categories}" itemLabel="name" itemValue="id"/>--%>
 
                 <span class="help-block">
-                    <a href="<s:url value="/category/add"/>">Add Category</a><br>
+                    <a href="<s:url value="/categories/add"/>">Add Category</a><br>
             Select 1 or more categories the event may belong to.
         </span>
             </div>

@@ -1,16 +1,17 @@
 package com.ht.event.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-//import org.hibernate.search.annotations.*;
-//import org.hibernate.search.annotations.Index;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.*;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+//import org.hibernate.search.annotations.*;
+//import org.hibernate.search.annotations.Index;
 
 @Getter
 @Setter
@@ -44,9 +45,9 @@ public class Event implements Serializable {
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="event_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
-    private Set<Category> category = new HashSet<Category>(0);
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "event_category", joinColumns = {@JoinColumn(name = "event_id")}, inverseJoinColumns = {@JoinColumn(name = "category_id")})
+    private Set<Category> categories = new HashSet<Category>(0);
 
     private float fees;
 

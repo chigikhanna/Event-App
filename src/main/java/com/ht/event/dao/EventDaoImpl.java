@@ -48,7 +48,7 @@ public class EventDaoImpl implements EventDao {
         eventToUpdate.setPincode(event.getPincode());
         eventToUpdate.setLatitude(event.getLatitude());
         eventToUpdate.setLongitude(event.getLongitude());
-//        eventToUpdate.setCategory(event.getCategory());
+//        eventToUpdate.setCategories(event.getCategories());
         eventToUpdate.setFees(event.getFees());
 
         getCurrentSession().update(eventToUpdate);
@@ -56,7 +56,7 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public Event getEvent(Integer id) {
-        return (Event) getCurrentSession().get(Event.class, id);
+        return (Event) getCurrentSession().load(Event.class, id);
     }
 
     @Override
