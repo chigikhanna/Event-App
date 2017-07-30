@@ -21,6 +21,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import java.net.URL;
+import java.util.*;
 
 @Slf4j
 @Controller
@@ -158,6 +160,24 @@ public class EventController extends HttpServlet {
         ModelAndView modelAndView = new ModelAndView("home");
         eventService.deleteEvent(Integer.parseInt(id));
         modelAndView.addObject("message", "Successfully deleted.");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    public ModelAndView search(@RequestParam("search") String searchText) throws Exception  {
+        List<Event> allFound = eventService.searchForEvent(searchText);
+        List<Event> EventModels = new ArrayList<Event>();
+
+        for (Event e : allFound)
+        {
+            Event em = new Event();
+            em.setName(e.getName());
+
+            EventModels.add(em);
+        }
+
+        ModelAndView modelAndView = new ModelAndView("result");
+        modelAndView.addObject("foundevents", EventModels);
         return modelAndView;
     }
 }

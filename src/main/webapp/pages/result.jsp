@@ -5,8 +5,7 @@
 </head>
 <body>
 <div id="result">
-    <h3>${requestScope["message"]}</h3>
-    <a href="<s:url value="/event/a"/>">Sign up</a><br>
+${foundevents}
 </div>
 
 </body>

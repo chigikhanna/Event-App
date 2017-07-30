@@ -9,6 +9,9 @@ import com.ht.event.model.EventDTO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -73,5 +76,49 @@ public class EventDaoImpl implements EventDao {
         criteria.setMaxResults(eventDTO.getSize());
 //        criteria.setFetchSize(5);
         return criteria.list();
+    }
+
+    @Transactional
+    public void indexEvents() throws Exception
+    {
+        try
+        {
+            Session session = sessionFactory.getCurrentSession();
+
+            FullTextSession fullTextSession = Search.getFullTextSession(session);
+            fullTextSession.createIndexer().startAndWait();
+        }
+        catch(Exception e)
+        {
+            throw e;
+        }
+    }
+
+    @Transactional
+    public List<Event> searchForEvent(String searchText) throws Exception
+    {
+        try
+        {
+            Session session = sessionFactory.getCurrentSession();
+
+            FullTextSession fullTextSession = Search.getFullTextSession(session);
+
+            QueryBuilder qb = fullTextSession.getSearchFactory()
+                    .buildQueryBuilder().forEntity(Event.class).get();
+            org.apache.lucene.search.Query query = qb
+                    .keyword().onFields("name")
+                    .matching(searchText)
+                    .createQuery();
+
+            org.hibernate.Query hibQuery =
+                    fullTextSession.createFullTextQuery(query, Event.class);
+
+            List<Event> results = hibQuery.list();
+            return results;
+        }
+        catch(Exception e)
+        {
+            throw e;
+        }
     }
 }
