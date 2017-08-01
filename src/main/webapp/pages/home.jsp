@@ -70,51 +70,15 @@
     <h3>TOP CATEGORIES</h3>
 
     <div class="row">
-        <div class="col-sm-4">
-            <p class="text-center"><strong>MUSIC</strong></p><br>
-            <a href="" data-toggle="collapse">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Sports Events"
-                     width="255" height="255">
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <p class="text-center"><strong>ART</strong></p><br>
-            <a href="" data-toggle="collapse">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Food & Drinks Evnts"
-                     width="255" height="255">
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <p class="text-center"><strong>THEATRE</strong></p><br>
-            <a href="#demo3" data-toggle="collapse">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Art Events"
-                     width="255" height="255">
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-4">
-            <p class="text-center"><strong>DANCE</strong></p><br>
-            <a href="" data-toggle="collapse">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Sports Events"
-                     width="255" height="255">
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <p class="text-center"><strong>FOOD & DRINK</strong></p><br>
-            <a href="" data-toggle="collapse">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Food & Drinks Evnts"
-                     width="255" height="255">
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <p class="text-center"><strong>BUSINESS</strong></p><br>
-            <a href="#demo3" data-toggle="collapse">
-                <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Art Events"
-                     width="255" height="255">
-            </a>
-        </div>
+        <c:forEach var="cat" items="${category}">
+            <div class="col-sm-4">
+                <a href="" data-toggle="collapse">
+                    <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Sports Events"
+                         width="255" height="255">
+                </a>
+                <p class="text-center"><strong>${cat.name}</strong></p><br>
+            </div>
+        </c:forEach>
     </div>
     <button class="all-cat" data-target="list.html">See All</button>
 </div>

@@ -14,11 +14,15 @@ public class LinkController {
     @Autowired
     EventService eventService;
 
+    @Autowired
+    CategoryService categoryService;
+
     @RequestMapping(value = "/home")
     public ModelAndView homePage() {
         ModelAndView modelAndView = new ModelAndView("home");
         EventDTO eventDTO = new EventDTO();
         modelAndView.addObject("events", eventService.getEvents(eventDTO));
+        modelAndView.addObject("category",categoryService.getCategories());
         return modelAndView;
     }
     @RequestMapping(value = "/event/details{id}")

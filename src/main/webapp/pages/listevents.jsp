@@ -25,7 +25,6 @@
     </div>
 </div>
 
-
 <jsp:include page="include/footer.jsp"/>
 
 <form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/add">
