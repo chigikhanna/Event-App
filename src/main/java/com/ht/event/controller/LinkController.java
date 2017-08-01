@@ -31,4 +31,10 @@ public class LinkController {
         modelAndView.addObject("events",eventService.getEvent(Integer.parseInt(id)));
         return modelAndView;
     }
+    @RequestMapping(value = "/event/searchfind")
+    public ModelAndView searchBar(){
+        ModelAndView modelAndView = new ModelAndView("searchbar");
+        return modelAndView;
+    }
+
 }

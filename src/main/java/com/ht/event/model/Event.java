@@ -51,7 +51,7 @@ public class Event implements Serializable {
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "event_category", joinColumns = {@JoinColumn(name = "event_id")}, inverseJoinColumns = {@JoinColumn(name = "category_id")})
     private Set<Category> categories = new HashSet<Category>(0);
 

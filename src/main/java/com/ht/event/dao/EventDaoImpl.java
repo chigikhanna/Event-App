@@ -7,6 +7,7 @@ package com.ht.event.dao;
 import com.ht.event.model.Event;
 import com.ht.event.model.EventDTO;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.search.FullTextSession;
@@ -110,8 +111,7 @@ public class EventDaoImpl implements EventDao {
                     .matching(searchText)
                     .createQuery();
 
-            org.hibernate.Query hibQuery =
-                    fullTextSession.createFullTextQuery(query, Event.class);
+            org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(query, Event.class);
 
             List<Event> results = hibQuery.list();
             return results;
