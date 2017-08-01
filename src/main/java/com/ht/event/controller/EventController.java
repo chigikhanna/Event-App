@@ -1,7 +1,5 @@
 package com.ht.event.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ht.event.model.Category;
 import com.ht.event.model.Event;
 import com.ht.event.model.EventDTO;
@@ -10,26 +8,21 @@ import com.ht.event.service.EventService;
 import com.ht.event.service.GeoLocService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.ServletRequestDataBinder;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import java.beans.PropertyEditorSupport;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import java.net.URL;
+import java.util.*;
 
 @Slf4j
 @Controller
@@ -59,14 +52,16 @@ public class EventController extends HttpServlet {
 //        binder.registerCustomEditor(Category.class, "categories", new PropertyEditorSupport() {
 //            @Override
 //            public void setAsText(String text) {
-//                Category c = categoryService.getCategory(Integer.parseInt(text));
+//                Category c = categoryService.getCategories(Integer.parseInt(text));
 //                setValue(c);
 //            }
 //        });
 //    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView addingEvent(@ModelAttribute Event event, @RequestParam("categorySelect") List<String> catID, @RequestParam("file") MultipartFile file) throws Exception {
+    public ModelAndView addingEvent(@ModelAttribute Event event,
+                                    @RequestParam(value = "categorySelect", required = false) List<String> categoryIds,
+                                    @RequestParam("file") MultipartFile file) throws Exception {
 
         if (!file.isEmpty()) {
             try {
@@ -98,20 +93,21 @@ public class EventController extends HttpServlet {
         event.setLatitude((float) geoLocations[0]);
         event.setLongitude((float) geoLocations[1]);
 
-        Set<Category> cat = new HashSet<Category>();
-        for (String items:catID) {
-            Category c = categoryService.getCategory(Integer.parseInt(items));
-            cat.add(c);
+        if (categoryIds != null) {
+            Set<Category> categories = new HashSet<>();
+            for (String categoryId : categoryIds) {
+                categories.add(categoryService.getCategory(Integer.parseInt(categoryId)));
+            }
+            event.setCategories(categories);
         }
-        event.setCategory(cat);
 
         eventService.addEvent(event);
-        return new ModelAndView("home");
+        return new ModelAndView("redirect:/home");
     }
 
     @RequestMapping(value = "/list")
     public ModelAndView listOfEvent() {
-        ModelAndView modelAndView = new ModelAndView("listevents");
+        ModelAndView modelAndView = new ModelAndView("events");
         EventDTO eventDTO = new EventDTO();
         eventDTO.setSize(5);
         eventDTO.setStart(0);
@@ -119,6 +115,14 @@ public class EventController extends HttpServlet {
         modelAndView.addObject("events", events);
         return modelAndView;
     }
+
+    @RequestMapping(value = "/{id}")
+    public ModelAndView details(@PathVariable String id) {
+        ModelAndView modelAndView = new ModelAndView("eventDetails");
+        modelAndView.addObject("event", eventService.getEvent(Integer.parseInt(id)));
+        return modelAndView;
+    }
+
 
     @RequestMapping(value = "/search")
     public ModelAndView endpoint(@RequestParam("size") String size, @RequestParam("page") String page) {
@@ -156,6 +160,24 @@ public class EventController extends HttpServlet {
         ModelAndView modelAndView = new ModelAndView("home");
         eventService.deleteEvent(Integer.parseInt(id));
         modelAndView.addObject("message", "Successfully deleted.");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    public ModelAndView search(@RequestParam("search") String searchText) throws Exception  {
+        List<Event> allFound = eventService.searchForEvent(searchText);
+        List<Event> EventModels = new ArrayList<Event>();
+
+        for (Event e : allFound)
+        {
+            Event em = new Event();
+            em.setName(e.getName());
+
+            EventModels.add(em);
+        }
+
+        ModelAndView modelAndView = new ModelAndView("result");
+        modelAndView.addObject("foundevents", EventModels);
         return modelAndView;
     }
 }

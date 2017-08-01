@@ -18,4 +18,8 @@ public interface EventDao {
     void deleteEvent(Integer id);
 
     List<Event> getEvents(EventDTO eventDTO);
+
+    void indexEvents();
+
+    List<Event> searchForEvent(String searchText) throws Exception;
 }

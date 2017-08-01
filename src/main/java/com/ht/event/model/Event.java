@@ -1,19 +1,27 @@
 package com.ht.event.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-//import org.hibernate.search.annotations.*;
-//import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.*;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+//import org.hibernate.search.annotations.*;
+//import org.hibernate.search.annotations.Index;
 
 @Getter
 @Setter
+@Indexed
 @Entity
 @Table(name = "event")
 public class Event implements Serializable {
@@ -21,7 +29,7 @@ public class Event implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    //    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
     private String name;
 
     private String description;
@@ -34,7 +42,6 @@ public class Event implements Serializable {
     //    private Time time;
     private String address;
 
-    //    @Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
     private String city;
 
     private String country;
@@ -44,9 +51,9 @@ public class Event implements Serializable {
     private float latitude;   //google api geo location
     private float longitude;  //google api geo location
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="event_category", joinColumns = {@JoinColumn(name="event_id")}, inverseJoinColumns = {@JoinColumn(name="category_id")})
-    private Set<Category> category = new HashSet<Category>(0);
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "event_category", joinColumns = {@JoinColumn(name = "event_id")}, inverseJoinColumns = {@JoinColumn(name = "category_id")})
+    private Set<Category> categories = new HashSet<Category>(0);
 
     private float fees;
 

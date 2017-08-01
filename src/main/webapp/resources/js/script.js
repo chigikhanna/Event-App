@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#category').multiselect({
+    $('#categories').multiselect({
         nonSelectedText: 'Select Category'
     });
 });

@@ -17,4 +17,6 @@ public interface EventService {
     void deleteEvent(Integer id);
 
     List<Event> getEvents(EventDTO eventDTO);
+
+    List<Event> searchForEvent(String searchText) throws Exception;
 }
