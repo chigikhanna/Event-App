@@ -109,7 +109,7 @@
                 <%--<form:select path="categories" multiple="true" items="${categories}" itemLabel="name" itemValue="id"/>--%>
 
                 <span class="help-block">
-                    <a href="<s:url value="/categories/add"/>">Add Category</a><br>
+                    <a href="<s:url value="/category/add"/>">Add Category</a><br>
             Select 1 or more categories the event may belong to.
         </span>
             </div>

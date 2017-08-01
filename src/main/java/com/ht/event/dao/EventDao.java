@@ -19,7 +19,7 @@ public interface EventDao {
 
     List<Event> getEvents(EventDTO eventDTO);
 
-    void indexEvents();
+    void indexEvents() throws Exception;
 
     List<Event> searchForEvent(String searchText) throws Exception;
 }

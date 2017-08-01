@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form:form method="POST" commandName="category" action="${pageContext.request.contextPath}/categories/save">
+<form:form method="POST" commandName="category" action="${pageContext.request.contextPath}/category/save">
     <form:input type="text" path="name" id="name" placeholder="Enter name of the categories"/>
     <input type="submit" value="Submit">
 </form:form>

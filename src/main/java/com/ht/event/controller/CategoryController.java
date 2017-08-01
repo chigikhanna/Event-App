@@ -29,7 +29,7 @@ public class CategoryController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView addingCategory(@ModelAttribute Category category) {
 
-        ModelAndView modelAndView = new ModelAndView("redirect:home");
+        ModelAndView modelAndView = new ModelAndView("redirect:/home");
         categoryService.addCategory(category);
         return modelAndView;
     }

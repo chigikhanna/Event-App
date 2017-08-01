@@ -59,9 +59,7 @@ public class EventController extends HttpServlet {
 //    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView addingEvent(@ModelAttribute Event event,
-                                    @RequestParam(value = "categorySelect", required = false) List<String> categoryIds,
-                                    @RequestParam("file") MultipartFile file) throws Exception {
+    public ModelAndView addingEvent(@ModelAttribute Event event,@RequestParam(value = "categorySelect", required = false) List<String> categoryIds,@RequestParam("file") MultipartFile file) throws Exception {
 
         if (!file.isEmpty()) {
             try {
