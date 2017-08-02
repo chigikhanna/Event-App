@@ -20,7 +20,7 @@
 <jsp:include page="include/header.jsp"/>
 
 <div class="container">
-    <h3 class="text-center">HT EVENTS</h3>
+    <h3 class="text-center">${category.name} Events</h3>
     <div class="row text-center event-listing">
 
         <c:forEach var="event" items="${category.events}">
