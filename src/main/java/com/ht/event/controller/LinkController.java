@@ -26,10 +26,6 @@ public class LinkController {
         return modelAndView;
     }
 
-
-
-
-
     @RequestMapping(value = "/event/searchfind")
     public ModelAndView searchBar(){
         ModelAndView modelAndView = new ModelAndView("searchbar");

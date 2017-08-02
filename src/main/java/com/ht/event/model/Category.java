@@ -23,6 +23,6 @@ public class Category implements Serializable {
     private Integer id;
     private String name;
 
-    @ManyToMany(mappedBy = "categories")
+    @ManyToMany(mappedBy = "categories", fetch = FetchType.EAGER)
     private Set<Event> events = new HashSet<Event>();
 }

@@ -80,7 +80,8 @@
                             <p>${events.description}
                             </p>
                             <h4>Tickets</h4>
-                            <h4>Category:</h4>
+                            <h4>Category: <c:forEach items="${events.categories}"
+                                                     var="category"><li>${category.name}</li></c:forEach></h4>
                             <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  REGISTER</button>
                             <!-- <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> -->
                         </div>

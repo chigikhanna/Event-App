@@ -2,12 +2,10 @@ package com.ht.event.controller;
 
 import com.ht.event.model.Category;
 import com.ht.event.service.CategoryService;
+import org.jboss.logging.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -23,6 +21,13 @@ public class CategoryController {
     public ModelAndView addCategoryPage() {
         ModelAndView modelAndView = new ModelAndView("addcategory");
         modelAndView.addObject("category", new Category());
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/show/{id}")
+    public ModelAndView show(@PathVariable String id){
+        ModelAndView modelAndView = new ModelAndView("categoryevent");
+        modelAndView.addObject("category",categoryService.getCategory(Integer.parseInt(id)));
         return modelAndView;
     }
 
