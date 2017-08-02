@@ -60,7 +60,7 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public Event getEvent(Integer id) {
-        return (Event) getCurrentSession().load(Event.class, id);
+        return (Event) getCurrentSession().get(Event.class, id);
     }
 
     @Override

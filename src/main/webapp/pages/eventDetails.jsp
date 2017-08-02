@@ -41,8 +41,7 @@
                     <a href=""><i class="w3-margin-right"></i>Add to calender</a><br><br>
                     <p class="left-header"><i class="fa fa-fw fa-map-marker w3-margin-right"></i>LOCATION</p>
                     <p class="w3-margin-right">
-                        ${event.address}
-                        <%--Manekshaw Auditorium<br> Khyber Lines<br> Delhi Cantonment<br> New Delhi, DL 110010</p>--%>
+                        ${event.address}<br> ${event.city}<br> ${event.country}-${event.pincode}</p>
                         <a href=""><i class="w3-margin-right"></i>View on map</a><br><br>
 
                 </div>

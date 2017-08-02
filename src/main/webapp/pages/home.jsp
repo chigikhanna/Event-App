@@ -80,7 +80,7 @@
             </div>
         </c:forEach>
     </div>
-    <button class="all-cat" data-target="list.html">See All</button>
+    <%--<button class="all-cat" data-target="list.html">See All</button>--%>
 </div>
 
 <div class="bg-1">
@@ -93,61 +93,13 @@
                         <img src="<s:url value="/resources/img/${event.name}.jpeg"/>" alt="Sports" width="400" height="300">
                         <p><strong>${event.name}</strong></p>
                         <p>${event.date}</p>
-                        <button class="btn" data-toggle="modal" data-target="#myModal">More</button>
+                        <a class="btn" href="<s:url value="/event/${event.id}"/>">More</a>
                     </div>
                 </div>
             </c:forEach>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="thumbnail">--%>
-            <%--<img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Sports" width="400" height="300">--%>
-            <%--<p><strong>EVENT 1</strong></p>--%>
-            <%--<p>Friday. 15 July, 2015</p>--%>
-            <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="thumbnail">--%>
-            <%--<img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Art" width="400" height="300">--%>
-            <%--<p><strong>EVENT 1</strong></p>--%>
-            <%--<p>Friday. 15 July, 2015</p>--%>
-            <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="thumbnail">--%>
-            <%--<img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Music" width="400" height="300">--%>
-            <%--<p><strong>EVENT 1</strong></p>--%>
-            <%--<p>Friday. 15 July, 2015</p>--%>
-            <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="thumbnail">--%>
-            <%--<img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Dance" width="400" height="300">--%>
-            <%--<p><strong>EVENT 1</strong></p>--%>
-            <%--<p>Friday. 15 July, 2015</p>--%>
-            <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="thumbnail">--%>
-            <%--<img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Theatre" width="400" height="300">--%>
-            <%--<p><strong>EVENT 1</strong></p>--%>
-            <%--<p>Friday. 15 July, 2015</p>--%>
-            <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-4">--%>
-            <%--<div class="thumbnail">--%>
-            <%--<img src="<s:url value="/resources/img/home-2.jpg"/>" alt="Food & Drinks" width="400" height="300">--%>
-            <%--<p><strong>EVENT 1</strong></p>--%>
-            <%--<p>Friday. 15 July, 2015</p>--%>
-            <%--<button class="btn" data-toggle="modal" data-target="#myModal">More</button>--%>
-            <%--</div>--%>
-            <%--</div>--%>
         </div>
         <div class="right-align">
-            <button class="btn all-events" data-target="list.html">See All</button>
+            <a class="all-cat" href="<s:url value="/event/list"/>">See All</a>
         </div>
     </div>
 </div>

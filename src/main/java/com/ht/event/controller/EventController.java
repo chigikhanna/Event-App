@@ -47,16 +47,6 @@ public class EventController extends HttpServlet {
         return modelAndView;
     }
 
-//    @InitBinder
-//    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
-//        binder.registerCustomEditor(Category.class, "categories", new PropertyEditorSupport() {
-//            @Override
-//            public void setAsText(String text) {
-//                Category c = categoryService.getCategories(Integer.parseInt(text));
-//                setValue(c);
-//            }
-//        });
-//    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView addingEvent(@ModelAttribute Event event,@RequestParam(value = "categorySelect", required = false) List<String> categoryIds,@RequestParam("file") MultipartFile file) throws Exception {
