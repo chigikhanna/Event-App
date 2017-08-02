@@ -103,15 +103,12 @@ public class EventController extends HttpServlet {
         modelAndView.addObject("events", events);
         return modelAndView;
     }
-
-    @RequestMapping(value = "/{id}")
-    public ModelAndView details(@PathVariable String id){
-        ModelAndView modelAndView = new ModelAndView("eventDetails");
+    @RequestMapping(value = "/details/{id}")
+    public ModelAndView showDetails(@PathVariable String id){
+        ModelAndView modelAndView = new ModelAndView("details");
         modelAndView.addObject("events",eventService.getEvent(Integer.parseInt(id)));
         return modelAndView;
     }
-
-
     @RequestMapping(value = "/search")
     public ModelAndView endpoint(@RequestParam("size") String size, @RequestParam("page") String page) {
         ModelAndView modelAndView = new ModelAndView("include/event-listings");

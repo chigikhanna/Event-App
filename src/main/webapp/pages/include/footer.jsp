@@ -105,56 +105,5 @@
 
 
 <script>
-    // Used to toggle the menu on smaller screens when clicking on the menu button
-    function openNav() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-
-    $("#signup-trigger").click(function () {
-        $('#signin').modal('hide');
-        $('#signup').modal('show');
-    });
-
-    $("#signin-trigger").click(function () {
-        $('#signup').modal('hide');
-        $('#signin').modal('show');
-    });
-
-    $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
-    $(document).ready(function () {
-        $(".up-arrow").on('click', function (event) {
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 600, function () {
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            }
-        });
-    });
-
-    function myMap() {
-        var mapCanvas = document.getElementById("map");
-        var mapOptions = {
-            center: new google.maps.LatLng(51.5, -0.2), zoom: 10
-        };
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB8O9iXUkHDvWsPnJ8AM-GJ5KcIobOMxU&callback=myMap"></script>
-
-<script>
     baseURL = "<%=request.getContextPath()%>";
 </script>
