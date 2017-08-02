@@ -25,12 +25,7 @@ public class LinkController {
         modelAndView.addObject("category",categoryService.getCategories());
         return modelAndView;
     }
-    @RequestMapping(value = "/event/details{id}")
-    public ModelAndView showDetails(@PathVariable String id){
-        ModelAndView modelAndView = new ModelAndView("details");
-        modelAndView.addObject("events",eventService.getEvent(Integer.parseInt(id)));
-        return modelAndView;
-    }
+
     @RequestMapping(value = "/event/searchfind")
     public ModelAndView searchBar(){
         ModelAndView modelAndView = new ModelAndView("searchbar");

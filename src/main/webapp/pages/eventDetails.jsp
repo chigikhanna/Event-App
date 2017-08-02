@@ -37,11 +37,11 @@
                                               alt="Avatar"></p>
                     <hr>
                     <p class="left-header"><i class="fa fa-fw fa-calendar w3-margin-right"></i>DATE AND TIME</p>
-                    <p class="w3-margin-right"> ${event.date}</p>
+                    <p class="w3-margin-right"> ${events.date}</p>
                     <a href=""><i class="w3-margin-right"></i>Add to calender</a><br><br>
                     <p class="left-header"><i class="fa fa-fw fa-map-marker w3-margin-right"></i>LOCATION</p>
                     <p class="w3-margin-right">
-                        ${event.address}<br> ${event.city}<br> ${event.country}-${event.pincode}</p>
+                        ${events.address}<br> ${events.city}<br> ${events.country}-${events.pincode}</p>
                         <a href=""><i class="w3-margin-right"></i>View on map</a><br><br>
 
                 </div>
@@ -72,13 +72,13 @@
                                 class="fa fa-bookmark-o" data-toggle="tooltip" data-placement="bottom"
                                 title="Bookmark"></a>
               <a class="fa fa-share-alt" data-toggle="tooltip" data-placement="bottom" title="Share"></a></span>
-                            <h2>${event.name}</h2>
+                            <h2>${events.name}</h2>
                             <hr class="w3-clear">
                             <h4>Description</h4>
                             <!-- <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom"> -->
-                            <p>${event.description}</p>
+                            <p>${events.description}</p>
                             <h4>Tickets</h4>
-                            <h4>Category: <c:forEach items="${event.categories}"
+                            <h4>Category: <c:forEach items="${events.categories}"
                                                      var="category">${category.name}</c:forEach></h4>
                             <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i
                                     class="fa fa-thumbs-up"></i>  REGISTER
@@ -127,6 +127,5 @@
 <br>
 
 <jsp:include page="include/footer.jsp"/>
-
 </body>
 </html>

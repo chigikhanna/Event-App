@@ -105,19 +105,6 @@
 
 
 <script>
-    // Accordion
-    // function myFunction(id) {
-    //     var x = document.getElementById(id);
-    //     if (x.className.indexOf("w3-show") == -1) {
-    //         x.className += " w3-show";
-    //         x.previousElementSibling.className += " w3-theme-d1";
-    //     } else {
-    //         x.className = x.className.replace("w3-show", "");
-    //         x.previousElementSibling.className =
-    //         x.previousElementSibling.className.replace(" w3-theme-d1", "");
-    //     }
-    // }
-
     // Used to toggle the menu on smaller screens when clicking on the menu button
     function openNav() {
         var x = document.getElementById("navDemo");
@@ -167,7 +154,6 @@
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB8O9iXUkHDvWsPnJ8AM-GJ5KcIobOMxU&callback=myMap"></script>
-
 
 <script>
     baseURL = "<%=request.getContextPath()%>";
