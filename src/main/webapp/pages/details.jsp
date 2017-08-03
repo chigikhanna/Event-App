@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chigi
-  Date: 26-Jul-17
-  Time: 2:36 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -54,15 +48,15 @@
             <br>
 
             <!-- Accordion -->
-            <div class="w3-card-2 w3-round" style="margin-top:20px;">
-                <!-- <div class="w3-white"> -->
-                <button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align">
-                    <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
-            </div>
-            <div class="w3-card-2 w3-round" style="margin-top:20px;">
-                <button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align">
-                    <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
-            </div>
+            <%--<div class="w3-card-2 w3-round" style="margin-top:20px;">--%>
+                <%--<!-- <div class="w3-white"> -->--%>
+                <%--<button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align">--%>
+                    <%--<i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>--%>
+            <%--</div>--%>
+            <%--<div class="w3-card-2 w3-round" style="margin-top:20px;">--%>
+                <%--<button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align">--%>
+                    <%--<i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>--%>
+            <%--</div>--%>
             <!-- End Left Column -->
         </div>
 
@@ -79,10 +73,14 @@
                             <!-- <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom"> -->
                             <p>${events.description}
                             </p>
-                            <h4>Tickets</h4>
-                            <h4>Category: <c:forEach items="${events.categories}"
-                                                     var="category"><li>${category.name}</li></c:forEach></h4>
-                            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  REGISTER</button>
+
+
+                            <h4>Category: </h4>
+                            <c:forEach items="${events.categories}"
+                                                     var="category">${category.name}<br></c:forEach>
+                            <h4>Tickets:  ${events.fees}</h4>
+                            <a href="#signup" class="w3-button w3-theme-d1 w3-margin-bottom" data-target="#signup" data-toggle="modal"><i class="fa fa-thumbs-up"></i>  REGISTER</a>
+                            <%--<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  REGISTER</button>--%>
                             <!-- <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> -->
                         </div>
                     </div>
@@ -129,6 +127,51 @@
 
 
 <jsp:include page="include/footer.jsp"/>
+
+<form method="POST" action="/user/add">
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+<h3 class="modal-title" id="modalLabel"><strong>
+<center>Register</center>
+</strong></h3>
+</div>
+<div class="modal-body">
+<form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/add">
+<div class="form-group">
+<label for="name" class="form-control-label">Name:</label>
+<input type="text" class="form-control" name="name" id="name">
+</div>
+<div class="form-group">
+<label for="email" class="form-control-label">Email:</label>
+<input type="text" class="form-control" name="email" id="email"></input>
+</div>
+<div class="form-group">
+<label for="pw" class="form-control-label">Password:</label>
+<input type="password" class="form-control" name="pw" id="pw"></input>
+</div>
+</form>
+<div class="form-group">
+<label for="phone" class="form-control-label">Phone#:</label>
+<input type="text" class="form-control" name="phone" id="phone"></input>
+</div>
+</div>
+<div class="modal-footer">
+<input type="submit" class="btn btn-primary" value="Register"></input>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<p>By registering, I agree to terms of service & privacy policy.</p>
+</div>
+</div>
+</div>
+</div>
+</form>
+
+
+
 <script>
     // Used to toggle the menu on smaller screens when clicking on the menu button
     function openNav() {
