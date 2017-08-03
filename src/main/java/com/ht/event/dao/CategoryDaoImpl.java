@@ -9,9 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by tanvigupta on 30-Jun-17.
- */
+
 @Repository
 public class CategoryDaoImpl implements CategoryDao {
 

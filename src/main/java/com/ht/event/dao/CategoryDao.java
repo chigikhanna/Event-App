@@ -5,9 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by tanvigupta on 03/07/17.
- */
 @Repository
 public interface CategoryDao {
     void addCategory(Category category);

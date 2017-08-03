@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-/**
- * Created by chigi on 13-Jul-17.
- */
+
 @Controller
 @RequestMapping(value = "/api")
 public class APIController {

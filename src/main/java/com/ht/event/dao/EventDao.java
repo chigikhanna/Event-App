@@ -5,9 +5,6 @@ import com.ht.event.model.EventDTO;
 
 import java.util.List;
 
-/**
- * Created by tanvigupta on 28/06/17.
- */
 public interface EventDao {
     void addEvent(Event event);
 
