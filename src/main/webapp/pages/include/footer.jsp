@@ -1,10 +1,11 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 
-<footer class="text-center">
+<footer>
+    <div class="text-center">
     <a class="up-arrow" href="#top" data-toggle="tooltip" title="TO TOP">
         <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
-
+    </a>
+    </div>
     <div class="follow">
         Follow Us:
         <a href="https://www.facebook.com/hindustantimes" class="fa fa-facebook expand"></a>
@@ -14,16 +15,15 @@
         <a href="https://www.linkedin.com/company/hindustantimes" class="fa fa-linkedin expand"></a>
         <a href="https://www.youtube.com/user/ht" class="fa fa-youtube expand"></a>
     </div>
-    <br>
-    <p>
-        Copyright &copy 2017. HT Media Limited. All rights reserved.
-        <span class="footer-links">
-  <a href="http://www.htmedia.in/Sectionb14c.html?Page=Page-HTMedia-AboutUs">About Us</a>
-  <a href="http://www.hindustantimes.com/contact-us"> Contact Us</a>
-  <a href="http://www.hindustantimes.com/privacy-policy"> Privacy Policy</a>
-  <a href="http://www.hindustantimes.com/disclaimer"> Disclaimer</a>
-  <a href="http://www.shine.com/"> Jobs</a>
-</span></p>
+    <div class="copyright">Copyright &copy 2017. HT Media Limited. All rights reserved.</div>
+    <div class="footer-links right-align">
+        <a href="http://www.htmedia.in/Sectionb14c.html?Page=Page-HTMedia-AboutUs">About Us</a>
+        <a href="http://www.hindustantimes.com/contact-us">Contact Us</a>
+        <a href="http://www.hindustantimes.com/privacy-policy">Privacy Policy</a>
+        <a href="http://www.hindustantimes.com/disclaimer">Disclaimer</a>
+        <a href="http://www.shine.com/">Jobs</a>
+    </div>
+
 </footer>
 
 <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
