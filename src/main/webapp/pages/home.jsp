@@ -47,7 +47,7 @@
         </div>
 
         <div class="item">
-            <img src="<s:url value="/resources/img/Unknown-1.jpg"/>" width="1200" height="400">
+            <img src="<s:url value="/resources/img/Unknown-1.jpeg"/>" width="1200" height="400">
             <div class="carousel-caption">
                 <h3>Coldplay Concert</h3>
                 <p>June 24,2017. Mumbai</p>
@@ -73,7 +73,7 @@
         <c:forEach var="cat" items="${category}">
             <div class="col-sm-4">
                 <a href="<s:url value="/category/show/${cat.id}"/>">
-                    <img src="<s:url value="/resources/img/home-2.jpg"/>" class="img-circle event" alt="Sports Events"
+                    <img src="<s:url value="/resources/img/events-n-exb-2015.jpg"/>" class="img-circle event" alt="Sports Events"
                          width="255" height="255">
                 </a>
                 <p class="text-center"><strong>${cat.name}</strong></p><br>
