@@ -21,7 +21,7 @@
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicatsors -->
+    <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -31,26 +31,26 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" style="max-height: 500px">
         <div class="item active">
-            <img src="<s:url value="/resources/img/home-1.jpg"/>" alt=width="1200" height="400">
+            <img src="<s:url value="/resources/img/summer-music-ftr.jpg"/>" alt=width="1200" height="400">
             <div class="carousel-caption">
-                <h3>Event 3</h3>
+                <h3>Music festival</h3>
                 <p>June 26,2017. New Delhi</p>
             </div>
         </div>
 
         <div class="item">
-            <img src="<s:url value="/resources/img/about.jpg"/>" width="1200" height="400">
+            <img src="<s:url value="/resources/img/hali-flickinger-cover-48484949.jpg"/>" width="1200" height="400">
             <div class="carousel-caption">
-                <h3>Event 1</h3>
+                <h3>Swimming</h3>
                 <p>June 25,2017. New Delhi</p>
             </div>
         </div>
 
         <div class="item">
-            <img src="<s:url value="/resources/img/home-2.jpg"/>" width="1200" height="400">
+            <img src="<s:url value="/resources/img/Unknown-1.jpg"/>" width="1200" height="400">
             <div class="carousel-caption">
-                <h3>Event 2</h3>
-                <p>June 24,2017. New Delhi</p>
+                <h3>Coldplay Concert</h3>
+                <p>June 24,2017. Mumbai</p>
             </div>
         </div>
     </div>

@@ -20,6 +20,15 @@
 
 <div class="container">
     <h3 class="text-center">HT EVENTS</h3>
+    <div class="wrap">
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Search by event or category"></input>
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+
     <div class="row text-center event-listing">
         <jsp:include page="include/event-listings.jsp"/>
     </div>
@@ -27,97 +36,14 @@
 
 <jsp:include page="include/footer.jsp"/>
 
-<form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/add">
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h3 class="modal-title" id="modalLabel">Sign Up</h3>
-                    <p>Already have an account?
-                        <button type="button" class="btn btn-default" id="signin-trigger"> Sign In</button>
-                    </p>
-                </div>
-                <div class="modal-body">
 
-                    <div class="form-group">
-                        <label for="name" class="form-control-label">Name <span class="fa fa-user-o"></span></label>
-                        <input type="text" class="form-control" name="name" id="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-control-label">Email <span
-                                class="fa fa-envelope-o"></span></label>
-                        <input type="text" class="form-control" name="email" id="email"></input>
-                    </div>
-                    <div class="form-group">
-                        <label for="pw" class="form-control-label">Password <span
-                                class="glyphicon glyphicon-lock"></span></label>
-                        <input type="password" class="form-control" name="pw" id="pw"></input>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone" class="form-control-label">Phone <span class="fa fa-phone"></span></label>
-                        <input type="text" class="form-control" name="phone" id="phone"></input>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" value="Sign Up"></input>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <p>By signing up, I agree to terms of service & privacy policy.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h3 class="modal-title" id="modalLabel">Sign In</h3>
-                <p>Not a member?
-                    <button type="button" class="btn btn-default" id="signup-trigger">Sign Up</button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" commandName="user" action="">
-                    <div class="form-group">
-                        <label for="email" class="form-control-label">Email <span
-                                class="fa fa-envelope-o"></span></label>
-                        <input type="text" class="form-control" name="email" id="email"></input>
-                    </div>
-                    <div class="form-group">
-                        <label for="pw" class="form-control-label">Password <span
-                                class="glyphicon glyphicon-lock"></span></label>
-                        <input type="password" class="form-control" name="pw" id="pw"></input>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" value="Sign In"></input>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
 
     $(document).ready(function () {
         var page = 0;
 
-        $("#signup-trigger").click(function () {
-            $('#signin').modal('hide');
-            $('#signup').modal('show');
-        });
 
-        $("#signin-trigger").click(function () {
-            $('#signup').modal('hide');
-            $('#signin').modal('show');
-        });
 
         $(window).scroll(function () {
             if ($(window).scrollTop() == $(document).height() - $(window).height()) {
